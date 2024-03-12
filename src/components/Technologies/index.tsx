@@ -13,36 +13,63 @@ export const Technologies = () => {
         sx={{
           margin: "20px",
           textAlign: "center",
-          justifyItems: "center",
+          justifyContent: "center",
+          display: "flex",
+          flexDirection: "column",
+          width: "90%",
         }}
       >
-        {skills
-          .filter((i) => i.category === "Technology")
-          .map(({ image, name }) => (
-            <img
-              src={image}
-              alt={name}
-              style={{ width: "75px", padding: "5px" }}
-            />
-          ))}
-        {skills
-          .filter((i) => i.category === "Software")
-          .map(({ image, name }) => (
-            <img
-              src={image}
-              alt={name}
-              style={{ width: "75px", padding: "5px" }}
-            />
-          ))}
-        {skills
-          .filter((i) => i.category === "Management")
-          .map(({ image, name }) => (
-            <img
-              src={image}
-              alt={name}
-              style={{ width: "75px", padding: "5px" }}
-            />
-          ))}
+        <Typography variant="h6">Tecnologias</Typography>
+        <Box
+          display={"flex"}
+          flexDirection={"row"}
+          flexWrap={"wrap"}
+          justifyContent={"center"}
+        >
+          {skills
+            .filter((i) => i.category === "Technology")
+            .map(({ image, name }) => (
+              <img
+                src={image}
+                alt={name}
+                style={{ width: "70px", height: "65px", padding: "5px" }}
+              />
+            ))}
+        </Box>
+        <Typography variant="h6">Software</Typography>
+        <Box
+          display={"flex"}
+          flexDirection={"row"}
+          flexWrap={"wrap"}
+          justifyContent={"center"}
+        >
+          {skills
+            .filter((i) => i.category === "Software")
+            .map(({ image, name }) => (
+              <img
+                src={image}
+                alt={name}
+                style={{ width: "70px", height: "65px", padding: "5px" }}
+              />
+            ))}
+        </Box>
+        <Typography variant="h6">Gestão</Typography>
+        <Box
+          display={"flex"}
+          flexDirection={"row"}
+          flexWrap={"wrap"}
+          justifyContent={"center"}
+        >
+          {skills
+            .filter((i) => i.category === "Management")
+            .map(({ image, name }) => (
+              <img
+                src={image}
+                alt={name}
+                style={{ width: "70px", height: "65px", padding: "5px" }}
+              />
+            ))}
+        </Box>
       </Box>
     </Box>
   );
