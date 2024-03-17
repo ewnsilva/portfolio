@@ -1,4 +1,10 @@
-import { Box, Typography, useMediaQuery, CardMedia } from "@mui/material";
+import {
+  Box,
+  Typography,
+  useMediaQuery,
+  CardMedia,
+  Tooltip,
+} from "@mui/material";
 import { skills } from "utils";
 
 export const Technologies = () => {
@@ -29,11 +35,22 @@ export const Technologies = () => {
           {skills
             .filter((i) => i.category === "Technology")
             .map(({ image, name }) => (
-              <img
-                src={image}
-                alt={name}
-                style={{ width: "70px", height: "65px", padding: "5px" }}
-              />
+              <Box
+                sx={{
+                  border: "2px solid black",
+                  m: 1,
+                  borderRadius: 2,
+                  justifyItems: "center",
+                }}
+              >
+                <Tooltip title={name}>
+                  <img
+                    src={image}
+                    alt={name}
+                    style={{ width: "70px", height: "65px", padding: "5px" }}
+                  />
+                </Tooltip>
+              </Box>
             ))}
         </Box>
         <Typography variant="h6">Software</Typography>
