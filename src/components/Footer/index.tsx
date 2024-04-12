@@ -15,10 +15,14 @@ export const Footer = () => (
       borderRadius: 10,
     }}
   >
-    <BottomNavigationAction label="Home" icon={<Home />} />
-    <BottomNavigationAction label="Person" icon={<Person />} />
-    <BottomNavigationAction label="Star" icon={<Star />} />
-    <BottomNavigationAction label="Work" icon={<Work />} />
-    <BottomNavigationAction label="Message" icon={<Message />} />
+    <BottomNavigationAction label="Home" icon={<Home />} href="#home" />
+    <BottomNavigationAction label="Person" icon={<Person />} href="#about" />
+    <BottomNavigationAction label="Star" icon={<Star />} href="#tech" />
+    <BottomNavigationAction label="Work" icon={<Work />} href="#projects" />
+    <BottomNavigationAction
+      label="Message"
+      icon={<Message />}
+      href="#contact"
+    />
   </BottomNavigation>
 );
