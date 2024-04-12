@@ -11,7 +11,9 @@ export const Home = () => {
       flexDirection={"column"}
       alignItems={"center"}
     >
-      <Typography variant="h3">Ericles Willian</Typography>
+      <Typography variant="h3" id="home">
+        Ericles Willian
+      </Typography>
       <Typography variant="h4">Desenvolvedor Front-End</Typography>
 
       <Box

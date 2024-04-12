@@ -5,7 +5,9 @@ export const Projects = () => {
 
   return (
     <Box mb={5} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-      <Typography variant="h4">Projetos</Typography>
+      <Typography variant="h4" id="projects" paddingTop={10}>
+        Projetos
+      </Typography>
 
       <Box
         border={"5px solid black"}

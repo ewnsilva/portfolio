@@ -5,7 +5,7 @@ export const About = () => {
 
   return (
     <Box mb={5}>
-      <Typography variant="h3" textAlign={"center"}>
+      <Typography id="about" variant="h3" textAlign={"center"} paddingTop={10}>
         Sobre
       </Typography>
       <Box

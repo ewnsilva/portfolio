@@ -17,7 +17,7 @@ export const Contact = () => {
       flexDirection={"column"}
       alignItems={"center"}
     >
-      <Typography variant="h4" mb={2}>
+      <Typography id="contact" variant="h4" mb={2} paddingTop={10}>
         Contato
       </Typography>
 
