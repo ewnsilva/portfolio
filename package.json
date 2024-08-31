@@ -2,10 +2,10 @@
   "name": "portfolio",
   "version": "1.0.0",
   "scripts": {
-    "start-dev": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start-dev": "react-scripts start GENERATE_SOURCEMAP=false",
+    "build": "react-scripts build GENERATE_SOURCEMAP=false",
+    "test": "react-scripts test GENERATE_SOURCEMAP=false",
+    "eject": "react-scripts eject GENERATE_SOURCEMAP=false"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -34,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
