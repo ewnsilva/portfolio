@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Paper } from "@mui/material";
 import {
   About,
   Contact,
@@ -9,14 +9,26 @@ import {
   Technologies,
 } from "components";
 
-export const Portfolio = () => (
-  <Box display={"flex"} flexDirection={"column"} justifyContent={"center"}>
-    <Header />
-    <Home />
-    <About />
-    <Technologies />
-    <Projects />
-    <Contact />
-    <Footer />
-  </Box>
-);
+import { ThemeProvider } from "context";
+
+export const Portfolio = () => {
+  return (
+    <ThemeProvider>
+      <Paper
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
+        <Header />
+        <Home />
+        <About />
+        <Technologies />
+        <Projects />
+        <Contact />
+        <Footer />
+      </Paper>
+    </ThemeProvider>
+  );
+};
