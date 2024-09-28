@@ -8,13 +8,17 @@ export const Home = () => {
       mt={11}
       mb={5}
       display={"flex"}
-      flexDirection={"column"}
+      flexDirection={matchesMd ? "column" : "row"}
       alignItems={"center"}
+      textAlign={"center"}
+      alignContent={"center"}
     >
-      <Typography variant="h3" id="home">
-        Ericles Willian
-      </Typography>
-      <Typography variant="h4">Desenvolvedor Front-End</Typography>
+      <Box>
+        <Typography variant="h3" id="home">
+          Ericles Willian
+        </Typography>
+        <Typography variant="h4">Desenvolvedor Front-End</Typography>
+      </Box>
 
       <Box
         border={"5px solid black"}

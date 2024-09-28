@@ -18,19 +18,36 @@ export const Contact = () => {
       alignItems={"center"}
     >
       <Typography id="contact" variant="h4" mb={2} paddingTop={10}>
-        Contato
+        Entre em Contato
       </Typography>
 
-      <Box display={"flex"} justifyContent={"space-between"} width={500}>
+      <Box display={"flex"} justifyContent={"space-between"} width={700}>
         <Box>
-          <Box>Email</Box>
-          <Box>Telefone</Box>
+          <Box>
+            <b>Email: </b>ewnsilva@gmail.com{" "}
+          </Box>
+          <Box>
+            <b>Telefone: </b>
+            {"(12) 98256-2145"}
+          </Box>
         </Box>
-        <FormControl sx={{ border: "5px solid black" }}>
-          <TextField label={"Seu Nome"} />
-          <TextField label={"Seu Email"} />
-          <TextField label={"Sua Mensagem"} multiline minRows={4} />
-          <Button>Enviar</Button>
+        <FormControl
+          sx={{
+            width: "60%",
+            border: "2px solid black",
+            borderRadius: 3,
+            p: 2,
+          }}
+        >
+          <TextField label={"Seu Nome"} sx={{ mb: 2 }} />
+          <TextField label={"Seu Email"} sx={{ mb: 2 }} />
+          <TextField
+            label={"Sua Mensagem"}
+            multiline
+            minRows={4}
+            sx={{ mb: 2 }}
+          />
+          <Button variant="contained">Enviar</Button>
         </FormControl>
       </Box>
     </Box>
