@@ -1,7 +1,7 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 
 export const Home = () => {
-  const matchesMd = useMediaQuery("(max-width:850px)");
+  const matchesMd = useMediaQuery("(max-width:870px)");
 
   return (
     <Box
@@ -9,9 +9,10 @@ export const Home = () => {
       mb={5}
       display={"flex"}
       flexDirection={matchesMd ? "column" : "row"}
+      columnGap={10}
       alignItems={"center"}
       textAlign={"center"}
-      alignContent={"center"}
+      justifyContent={"space-around"}
     >
       <Box>
         <Typography variant="h3" id="home">

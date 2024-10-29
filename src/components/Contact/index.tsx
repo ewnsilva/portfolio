@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 
 export const Contact = () => {
-  const matchesMd = useMediaQuery("(max-width:850px)");
+  const matchesMd = useMediaQuery("(max-width:870px)");
 
   return (
     <Box
@@ -21,7 +21,12 @@ export const Contact = () => {
         Entre em Contato
       </Typography>
 
-      <Box display={"flex"} justifyContent={"space-between"} width={700}>
+      <Box
+        display={"flex"}
+        flexDirection={matchesMd ? "column" : "row"}
+        justifyContent={matchesMd ? "center" : "space-between"}
+        alignItems={"center"}
+      >
         <Box>
           <Box>
             <b>Email: </b>ewnsilva@gmail.com{" "}
@@ -31,24 +36,27 @@ export const Contact = () => {
             {"(12) 98256-2145"}
           </Box>
         </Box>
-        <FormControl
+        <Box
           sx={{
-            width: "60%",
+            minWidth: 250,
+            maxWidth: 400,
+            width: "100%",
             border: "2px solid black",
             borderRadius: 3,
-            p: 2,
           }}
         >
-          <TextField label={"Seu Nome"} sx={{ mb: 2 }} />
-          <TextField label={"Seu Email"} sx={{ mb: 2 }} />
-          <TextField
-            label={"Sua Mensagem"}
-            multiline
-            minRows={4}
-            sx={{ mb: 2 }}
-          />
-          <Button variant="contained">Enviar</Button>
-        </FormControl>
+          <FormControl>
+            <TextField label={"Seu Nome"} sx={{ mb: 2 }} />
+            <TextField label={"Seu Email"} sx={{ mb: 2 }} />
+            <TextField
+              label={"Sua Mensagem"}
+              multiline
+              minRows={4}
+              sx={{ mb: 2 }}
+            />
+            <Button variant="contained">Enviar</Button>
+          </FormControl>
+        </Box>
       </Box>
     </Box>
   );
