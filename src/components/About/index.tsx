@@ -1,7 +1,7 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 
 export const About = () => {
-  const matchesMd = useMediaQuery("(max-width:850px)");
+  const matchesMd = useMediaQuery("(max-width:870px)");
 
   return (
     <Box mb={5}>

@@ -37,7 +37,12 @@ export const Contact = () => {
         Entre em Contato
       </Typography>
 
-      <Box display={"flex"} justifyContent={"space-between"} width={700}>
+      <Box
+        display={"flex"}
+        flexDirection={matchesMd ? "column" : "row"}
+        justifyContent={matchesMd ? "center" : "space-between"}
+        alignItems={"center"}
+      >
         <Box>
           <Box>
             <b>Email: </b>ewnsilva@gmail.com{" "}
