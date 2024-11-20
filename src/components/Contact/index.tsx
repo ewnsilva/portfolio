@@ -1,14 +1,30 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  TextField,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import React from "react";
+import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup.object().shape({
+  name: yup.string().required("Nome é obrigatório"),
+  email: yup.string().email("Email inválido").required("Email é obrigatório"),
+  message: yup.string().required("Mensagem é obrigatória"),
+});
 
 export const Contact = () => {
-  const matchesMd = useMediaQuery("(max-width:850px)");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = async (data: any) => {
+    console.log(data);
+    alert("Email enviado com sucesso!");
+    reset();
+  };
 
   return (
     <Box
@@ -31,23 +47,54 @@ export const Contact = () => {
             {"(12) 98256-2145"}
           </Box>
         </Box>
-        <FormControl
-          sx={{
-            width: "60%",
-            border: "2px solid black",
-            borderRadius: 3,
-            p: 2,
-          }}
-        >
-          <TextField label={"Seu Nome"} sx={{ mb: 2 }} />
-          <TextField label={"Seu Email"} sx={{ mb: 2 }} />
-          <TextField
-            label={"Sua Mensagem"}
-            multiline
-            minRows={4}
-            sx={{ mb: 2 }}
-          />
-          <Button variant="contained">Enviar</Button>
+        <FormControl>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: "60%",
+                alignItems: "end",
+                border: "2px solid black",
+                borderRadius: 3,
+                p: 2,
+              }}
+            >
+              <TextField
+                fullWidth
+                label={"Seu Nome"}
+                {...register("name")}
+                error={!!errors.name}
+                helperText={errors.name?.message}
+                sx={{ mb: 2 }}
+              />
+              <TextField
+                fullWidth
+                label={"Seu Email"}
+                {...register("email")}
+                error={!!errors.email}
+                helperText={errors.email?.message}
+                sx={{ mb: 2 }}
+              />
+              <TextField
+                fullWidth
+                label={"Sua Mensagem"}
+                multiline
+                minRows={4}
+                {...register("message")}
+                error={!!errors.message}
+                helperText={errors.message?.message}
+                sx={{ mb: 2 }}
+              />
+              <Button
+                variant="contained"
+                type="submit"
+                sx={{ textAlign: "end" }}
+              >
+                Enviar
+              </Button>
+            </Box>
+          </form>
         </FormControl>
       </Box>
     </Box>
