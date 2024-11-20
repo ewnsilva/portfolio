@@ -12,15 +12,6 @@ import useTheme from "hooks/useTheme";
 
 export const Header = () => {
   const { darkMode, changeTheme } = useTheme();
-  const hideHeader = () => {};
-
-  const handleDownload = () => {
-    // Lógica para baixar o currículo
-  };
-
-  const switchTheme = () => {
-    // Lógica para alternar entre modo claro e escuro
-  };
 
   return (
     <Box>
