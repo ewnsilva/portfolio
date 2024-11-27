@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  TextField,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -11,6 +18,8 @@ const schema = yup.object().shape({
 });
 
 export const Contact = () => {
+  const matchesMd = useMediaQuery("(max-width:870px)");
+
   const {
     register,
     handleSubmit,

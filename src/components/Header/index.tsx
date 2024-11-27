@@ -27,7 +27,6 @@ export const Header = () => {
             <Button
               color="inherit"
               aria-label="download"
-              onClick={handleDownload}
               endIcon={<DocumentScanner />}
             >
               Download Curriculo
