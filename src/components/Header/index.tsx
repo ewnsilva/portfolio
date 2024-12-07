@@ -18,8 +18,8 @@ export const Header = () => {
       <AppBar position="fixed" sx={{ flexGrow: 1 }}>
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box display={"flex"} alignItems={"baseline"}>
-            <Typography>Ericles Willian | </Typography>
-            <Typography fontSize={12} sx={{ ml: 1 }}>
+            <Typography color={"secondary"}>Ericles Willian | </Typography>
+            <Typography color={"secondary"} fontSize={12} sx={{ ml: 1 }}>
               Desenvolvedor Front-End
             </Typography>
           </Box>

@@ -42,7 +42,13 @@ export const Contact = () => {
       flexDirection={"column"}
       alignItems={"center"}
     >
-      <Typography id="contact" variant="h4" mb={2} paddingTop={10}>
+      <Typography
+        id="contact"
+        color={"primary"}
+        variant="h4"
+        mb={2}
+        paddingTop={10}
+      >
         Entre em Contato
       </Typography>
 
@@ -69,7 +75,8 @@ export const Contact = () => {
                 flexDirection: "column",
                 width: "60%",
                 alignItems: "end",
-                border: "2px solid black",
+                border: "2px solid",
+                borderColor: "primary.main",
                 borderRadius: 3,
                 p: 2,
               }}

@@ -5,7 +5,13 @@ export const About = () => {
 
   return (
     <Box mb={5}>
-      <Typography id="about" variant="h3" textAlign={"center"} paddingTop={10}>
+      <Typography
+        id="about"
+        color={"primary"}
+        variant="h3"
+        textAlign={"center"}
+        paddingTop={10}
+      >
         Sobre
       </Typography>
       <Box
@@ -16,7 +22,9 @@ export const About = () => {
         justifyItems={"center"}
       >
         <Box
-          border={"5px solid black"}
+          border={"5px solid"}
+          borderRadius={3}
+          borderColor={"primary.main"}
           sx={{
             width: matchesMd ? "250px" : "50%",
             height: "200px",
