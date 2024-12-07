@@ -1,25 +1,35 @@
-import { Box, Typography, Tooltip } from "@mui/material";
+import { useState } from "react";
+import { Box, Typography, Tooltip, Popover } from "@mui/material";
 import { skills } from "utils";
 
-export const Technologies = () => (
-  <Box mb={5} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-    <Typography variant="h4" id="tech" paddingTop={10}>
-      Experiencias
-    </Typography>
+export const Technologies = () => {
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const [popoverContent, setPopoverContent] = useState<string>("");
 
-    <Box
-      border={"5px solid black"}
-      borderRadius={2}
-      sx={{
-        margin: "20px",
-        textAlign: "center",
-        justifyContent: "center",
-        display: "flex",
-        flexDirection: "column",
-        width: "90%",
-      }}
-    >
-      <Typography variant="h6">Tecnologias</Typography>
+  const handlePopoverOpen = (
+    event: React.MouseEvent<HTMLElement>,
+    name: string
+  ) => {
+    setAnchorEl(event.currentTarget);
+    setPopoverContent(name);
+
+    setTimeout(() => {
+      setAnchorEl(null);
+    }, 1500);
+  };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+    setPopoverContent("");
+  };
+
+  const isPopoverOpen = Boolean(anchorEl);
+
+  const TechnologiesImages = (title: string, filter: string): JSX.Element => (
+    <>
+      <Typography variant="h6" color={"primary"}>
+        {title}
+      </Typography>
       <Box
         display={"flex"}
         flexDirection={"row"}
@@ -27,13 +37,15 @@ export const Technologies = () => (
         justifyContent={"center"}
       >
         {skills
-          .filter((i) => i.category === "Technology")
+          .filter((i) => i.category === filter)
           .map(({ image, name }) => (
             <Box
+              key={name}
               sx={{
-                border: "2px solid black",
+                border: "2px solid",
+                borderColor: "primary.main",
                 m: 1,
-                borderRadius: 2,
+                borderRadius: 3,
                 justifyItems: "center",
               }}
             >
@@ -42,67 +54,54 @@ export const Technologies = () => (
                   src={image}
                   alt={name}
                   style={{ width: "70px", height: "65px", padding: "5px" }}
+                  onClick={(event) => handlePopoverOpen(event, name)}
                 />
               </Tooltip>
             </Box>
           ))}
       </Box>
-      <Typography variant="h6">Software</Typography>
+    </>
+  );
+
+  return (
+    <Box mb={5} display={"flex"} flexDirection={"column"} alignItems={"center"}>
+      <Typography color={"primary"} variant="h4" id="tech" paddingTop={10}>
+        Experiencias
+      </Typography>
+
       <Box
-        display={"flex"}
-        flexDirection={"row"}
-        flexWrap={"wrap"}
-        justifyContent={"center"}
+        border={"5px solid"}
+        borderColor={"primary.main"}
+        borderRadius={3}
+        sx={{
+          margin: "20px",
+          textAlign: "center",
+          justifyContent: "center",
+          display: "flex",
+          flexDirection: "column",
+          width: "90%",
+        }}
       >
-        {skills
-          .filter((i) => i.category === "Software")
-          .map(({ image, name }) => (
-            <Box
-              sx={{
-                border: "2px solid black",
-                m: 1,
-                borderRadius: 2,
-                justifyItems: "center",
-              }}
-            >
-              <Tooltip title={name}>
-                <img
-                  src={image}
-                  alt={name}
-                  style={{ width: "70px", height: "65px", padding: "5px" }}
-                />
-              </Tooltip>
-            </Box>
-          ))}
-      </Box>
-      <Typography variant="h6">Gestão</Typography>
-      <Box
-        display={"flex"}
-        flexDirection={"row"}
-        flexWrap={"wrap"}
-        justifyContent={"center"}
-      >
-        {skills
-          .filter((i) => i.category === "Management")
-          .map(({ image, name }) => (
-            <Box
-              sx={{
-                border: "2px solid black",
-                m: 1,
-                borderRadius: 2,
-                justifyItems: "center",
-              }}
-            >
-              <Tooltip title={name}>
-                <img
-                  src={image}
-                  alt={name}
-                  style={{ width: "70px", height: "65px", padding: "5px" }}
-                />
-              </Tooltip>
-            </Box>
-          ))}
+        {TechnologiesImages("Tecnologias", "Technology")}
+        {TechnologiesImages("Software", "Software")}
+        {TechnologiesImages("Gestão", "Management")}
+
+        <Popover
+          open={isPopoverOpen}
+          anchorEl={anchorEl}
+          onClose={handlePopoverClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+        >
+          <Typography sx={{ p: 2 }}>{popoverContent}</Typography>
+        </Popover>
       </Box>
     </Box>
-  </Box>
-);
+  );
+};
