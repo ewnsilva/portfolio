@@ -1,81 +1,130 @@
 import { useState } from "react";
-import { Box, Button, IconButton, Typography } from "@mui/material";
-
+import {
+  Box,
+  IconButton,
+  Typography,
+  useMediaQuery,
+  Fade,
+} from "@mui/material";
 import { projects } from "utils";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 
 export const Projects = () => {
+  const matchesMd = useMediaQuery("(min-width:1200px)");
   const [preview, setPreview] = useState(3);
+  const [fadeIn, setFadeIn] = useState(true);
 
   const handlePrev = () => {
-    setPreview((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+    setFadeIn(false);
+    setTimeout(() => {
+      setPreview((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+      setFadeIn(true);
+    }, 300);
   };
 
   const handleNext = () => {
-    setPreview((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+    setFadeIn(false);
+    setTimeout(() => {
+      setPreview((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+      setFadeIn(true);
+    }, 300);
   };
 
+  const currentProject = projects.find((project) => project.number === preview);
+
   return (
-    <Box mb={5} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-      <Typography variant="h4" id="projects" paddingTop={10}>
+    <Box mb={5} display="flex" flexDirection="column" alignItems="center">
+      <Typography color={"primary"} variant="h4" id="projects" paddingTop={10}>
         Projetos
       </Typography>
 
       <Box
-        display={"flex"}
-        flexDirection={"row"}
-        border={"5px solid black"}
+        display="flex"
+        flexDirection={matchesMd ? "row" : "column"}
+        border="5px solid"
+        borderRadius={3}
+        borderColor={"primary.main"}
         width="90%"
         p={2}
         margin="20px"
-        alignItems={"center"}
+        alignItems="center"
+        position="relative"
       >
-        {projects.map(({ image, name, number, description }) => {
-          return (
-            number === preview && (
-              <Box display="flex" width={"100%"}>
-                <Box display="flex" width={"100%"}>
-                  <Button disabled={preview === 3} onClick={handleNext}>
-                    <ArrowLeft />
-                  </Button>
-                  <Box display={"flex"} alignContent={"center"}>
-                    <img
-                      key={number}
-                      src={image}
-                      alt={name}
-                      style={{
-                        width: 800,
-                        height: 450,
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.filter = "brightness(50%)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.filter = "brightness(100%)";
-                      }}
-                    />
-                  </Box>
-                  <Button disabled={preview === 0} onClick={handlePrev}>
-                    <ArrowRight />
-                  </Button>
-                </Box>
-                <Box
-                  sx={{
-                    p: 2,
-                    width: "50%",
-                    alignContent: "center",
-                    textAlign: "justify",
-                  }}
-                >
-                  <Typography variant="h5" mb={2}>
-                    Descrição:
-                  </Typography>
-                  <Typography>{description}</Typography>
-                </Box>
-              </Box>
-            )
-          );
-        })}
+        <Fade in={fadeIn} timeout={300}>
+          <Box
+            display="flex"
+            width={matchesMd ? "65%" : "100%"}
+            alignItems="center"
+            position="relative"
+          >
+            <IconButton
+              disabled={preview === 3}
+              onClick={handleNext}
+              color={"secondary"}
+              sx={{
+                position: "absolute",
+                left: 10,
+                top: "50%",
+                transform: "translateY(-50%)",
+                backgroundColor: "rgba(0, 0, 0, 0.3)",
+                "&:hover": {
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                },
+              }}
+            >
+              <ArrowLeft />
+            </IconButton>
+
+            <Box display="flex" alignContent="center" width="100%">
+              <img
+                src={currentProject?.image}
+                alt={currentProject?.name}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: 750,
+                  minHeight: 200,
+                  objectFit: "cover",
+                  transition: "opacity 0.3s ease-in-out",
+                }}
+              />
+            </Box>
+            <IconButton
+              disabled={preview === 0}
+              onClick={handlePrev}
+              color={"secondary"}
+              sx={{
+                position: "absolute",
+                right: 10,
+                top: "50%",
+                transform: "translateY(-50%)",
+                backgroundColor: "rgba(0, 0, 0, 0.3)",
+                "&:hover": {
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                },
+              }}
+            >
+              <ArrowRight />
+            </IconButton>
+          </Box>
+        </Fade>
+
+        <Fade in={fadeIn} timeout={300}>
+          <Box
+            sx={{
+              p: 2,
+              width: matchesMd ? "35%" : "100%",
+              alignContent: "center",
+              textAlign: "justify",
+              transition: "opacity 0.3s ease-in-out",
+            }}
+          >
+            <Typography color={"primary"} variant="h5" mb={2}>
+              Descrição:
+            </Typography>
+            <Typography>{currentProject?.description}</Typography>
+          </Box>
+        </Fade>
       </Box>
     </Box>
   );
