@@ -1,8 +1,8 @@
-import { BottomNavigation, BottomNavigationAction } from "@mui/material";
+import { Box, BottomNavigation, Button } from "@mui/material";
 import { Home, Person, Star, Work, Message } from "@mui/icons-material";
 
 export const Footer = () => (
-  <BottomNavigation
+  <Box
     sx={{
       width: "100%",
       position: "fixed",
@@ -13,16 +13,68 @@ export const Footer = () => (
       maxWidth: "500px",
       backgroundColor: "transparent",
       borderRadius: 10,
+      p: 0,
     }}
   >
-    <BottomNavigationAction label="Home" icon={<Home />} href="#home" />
-    <BottomNavigationAction label="Person" icon={<Person />} href="#about" />
-    <BottomNavigationAction label="Star" icon={<Star />} href="#tech" />
-    <BottomNavigationAction label="Work" icon={<Work />} href="#projects" />
-    <BottomNavigationAction
-      label="Message"
-      icon={<Message />}
+    <Button
+      href="#home"
+      sx={{
+        border: "1px solid",
+        borderRadius: 3,
+        borderColor: "primary.main",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        m: 0.5,
+      }}
+    >
+      <Home color={"primary"} />
+    </Button>
+    <Button
+      href="#about"
+      sx={{
+        border: "1px solid",
+        borderRadius: 3,
+        borderColor: "primary.main",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        m: 0.5,
+      }}
+    >
+      <Person color={"primary"} />
+    </Button>
+    <Button
+      href="#tech"
+      sx={{
+        border: "1px solid",
+        borderRadius: 3,
+        borderColor: "primary.main",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        m: 0.5,
+      }}
+    >
+      <Star color={"primary"} />
+    </Button>
+    <Button
+      href="#projects"
+      sx={{
+        border: "1px solid",
+        borderRadius: 3,
+        borderColor: "primary.main",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        m: 0.5,
+      }}
+    >
+      <Work color={"primary"} />
+    </Button>
+    <Button
       href="#contact"
-    />
-  </BottomNavigation>
+      sx={{
+        border: "1px solid",
+        borderRadius: 3,
+        borderColor: "primary.main",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        m: 0.5,
+      }}
+    >
+      <Message color={"primary"} />
+    </Button>
+  </Box>
 );
