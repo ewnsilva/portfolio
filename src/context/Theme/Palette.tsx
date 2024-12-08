@@ -1,14 +1,14 @@
 import { ILayoutPalette } from "context";
 
-const LightPrimaryColor = "#4b71c6";
-const LightSecondaryColor = "#ffffff";
-const LightBackgroundColor = "#ededed";
-const LightPaperColor = "#ffffff";
+const LightPrimaryColor = "#169ecc";
+const LightSecondaryColor = "#f2f2f2";
+const LightBackgroundColor = "#e5e5e5";
+const LightPaperColor = "#f2f2f2";
 
-const DarkPrimaryColor = "#E7EBF0";
-const DarkSecondaryColor = "#E7EBF0";
-const DarkBackgroundColor = "#1D2125";
-const DarkPaperColor = "#2b2f33";
+const DarkPrimaryColor = "#d8d8d8";
+const DarkSecondaryColor = "#d8d8d8";
+const DarkBackgroundColor = "#0e2933";
+const DarkPaperColor = "#0e2933";
 
 export const LightTheme: ILayoutPalette = {
   palette: {
