@@ -1,7 +1,7 @@
-import { Box, BottomNavigation, Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { Home, Person, Star, Work, Message } from "@mui/icons-material";
 
-export const Footer = () => (
+export const NavigationButtons = () => (
   <Box
     sx={{
       width: "100%",
