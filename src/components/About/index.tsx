@@ -8,7 +8,8 @@ export const About = () => {
       <Typography
         id="about"
         color={"primary"}
-        variant="h3"
+        variant="h4"
+        fontWeight={600}
         textAlign={"center"}
         paddingTop={10}
       >
@@ -37,18 +38,10 @@ export const About = () => {
           textAlign={"justify"}
           width={matchesMd ? "95%" : "50%"}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-          suscipit faucibus porta. Ut aliquet lorem malesuada, volutpat sapien
-          eu, bibendum dolor. Integer rutrum, sapien non sagittis luctus, eros
-          quam cursus ipsum, quis dapibus erat purus eu lorem. Etiam interdum
-          pretium est, ac vulputate augue ornare quis. Nunc ex enim, commodo sit
-          amet tempor ac, sagittis eu arcu. Ut sollicitudin non purus sit amet
-          ultricies. Aenean eget quam eleifend velit aliquet convallis. Maecenas
-          mattis enim nisi, id tempor ante tempus id. Donec euismod diam egestas
-          tortor pulvinar congue. Cras consectetur neque nec urna pretium
-          pharetra. Ut diam sem, volutpat quis lobortis et, luctus rutrum metus.
-          Quisque vulputate laoreet tellus, vel commodo nisi mollis vitae.
-          Integer sit amet ex risus. Nulla ullamcorper augue.
+          Sou Desenvolvedor Front-end focado em aperfeiçoamento continuo e
+          resolução de problemas de através de confecção de código limpo, sempre
+          visando otimiziar o sistema como um todo e garantir uma ótima
+          experiencia visual e funcional para o usuário.
         </Typography>
       </Box>
     </Box>
