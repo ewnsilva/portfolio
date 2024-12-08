@@ -1,12 +1,9 @@
+import { ThemeProvider } from "context";
 import { Portfolio } from "pages";
-import { Box } from "@mui/material";
 
-const App = () => {
-  return (
-    <Box>
-      <Portfolio />
-    </Box>
-  );
-};
-
+const App = () => (
+  <ThemeProvider>
+    <Portfolio />
+  </ThemeProvider>
+);
 export default App;

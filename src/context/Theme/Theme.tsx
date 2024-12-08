@@ -1,6 +1,6 @@
 import { createContext, useMemo, useState, useEffect } from "react";
 
-import { useMediaQuery } from "@mui/material";
+import { CssBaseline, useMediaQuery } from "@mui/material";
 import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
@@ -62,6 +62,7 @@ export const ThemeProvider = ({ children }: any): any => {
         setLayout,
       }}
     >
+      <CssBaseline />
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
     </ThemeContext.Provider>
   );
