@@ -1,34 +1,31 @@
-import { Paper } from "@mui/material";
+import { Box } from "@mui/material";
 import {
   About,
   Contact,
-  Footer,
+  NavigationButtons,
   Header,
   Home,
   Projects,
   Technologies,
 } from "components";
 
-import { ThemeProvider } from "context";
-
-export const Portfolio = () => {
+export const Portfolio = (): JSX.Element => {
   return (
-    <ThemeProvider>
-      <Paper
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
-        <Header />
-        <Home />
-        <About />
-        <Technologies />
-        <Projects />
-        <Contact />
-        <Footer />
-      </Paper>
-    </ThemeProvider>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        backgroundColor: "background.default",
+      }}
+    >
+      <Header />
+      <Home />
+      <About />
+      <Technologies />
+      <Projects />
+      <Contact />
+      <NavigationButtons />
+    </Box>
   );
 };
