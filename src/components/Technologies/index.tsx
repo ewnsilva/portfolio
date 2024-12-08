@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Typography, Tooltip, Popover } from "@mui/material";
+import { Box, Typography, Tooltip, Popover, Paper } from "@mui/material";
 import { skills } from "utils";
 
 export const Technologies = () => {
@@ -27,7 +27,7 @@ export const Technologies = () => {
 
   const TechnologiesImages = (title: string, filter: string): JSX.Element => (
     <>
-      <Typography variant="h6" color={"primary"}>
+      <Typography variant="h5" color={"primary"}>
         {title}
       </Typography>
       <Box
@@ -35,6 +35,7 @@ export const Technologies = () => {
         flexDirection={"row"}
         flexWrap={"wrap"}
         justifyContent={"center"}
+        mb={2}
       >
         {skills
           .filter((i) => i.category === filter)
@@ -65,14 +66,18 @@ export const Technologies = () => {
 
   return (
     <Box mb={5} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-      <Typography color={"primary"} variant="h4" id="tech" paddingTop={10}>
-        Experiencias
+      <Typography
+        color={"primary"}
+        fontWeight={600}
+        variant="h4"
+        id="tech"
+        paddingTop={10}
+      >
+        Ferramentas que domino
       </Typography>
 
-      <Box
-        border={"5px solid"}
-        borderColor={"primary.main"}
-        borderRadius={3}
+      <Paper
+        elevation={5}
         sx={{
           margin: "20px",
           textAlign: "center",
@@ -101,7 +106,7 @@ export const Technologies = () => {
         >
           <Typography sx={{ p: 2 }}>{popoverContent}</Typography>
         </Popover>
-      </Box>
+      </Paper>
     </Box>
   );
 };
