@@ -1,5 +1,7 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 
+import { photos } from "utils";
+
 export const Home = () => {
   const matchesMd = useMediaQuery("(max-width:870px)");
 
@@ -17,22 +19,46 @@ export const Home = () => {
         justifyContent={"space-around"}
       >
         <Box>
-          <Typography color={"primary"} variant="h3">
+          <Typography
+            color={"primary"}
+            variant="h3"
+            sx={{
+              fontSize: {
+                xs: "1.5rem",
+                sm: "2rem",
+                md: "2.5rem",
+                lg: "3rem",
+              },
+            }}
+          >
             Ericles Willian
           </Typography>
-          <Typography color={"primary"} variant="h4">
+          <Typography
+            color={"primary"}
+            variant="h4"
+            sx={{
+              fontSize: {
+                xs: "1.2rem",
+                sm: "1.5rem",
+                md: "2rem",
+                lg: "2.5rem",
+              },
+            }}
+          >
             Desenvolvedor Front-End
           </Typography>
         </Box>
 
         <Box
-          border={"5px solid"}
-          borderRadius={3}
-          borderColor={"primary.main"}
+          component="img"
+          src={photos[1].image}
+          alt={photos[1].name}
           sx={{
-            width: "350px",
-            height: "500px",
-            margin: "20px",
+            border: "5px solid",
+            borderRadius: 3,
+            borderColor: "primary.main",
+            width: "50%",
+            maxWidth: "350px",
           }}
         />
       </Box>

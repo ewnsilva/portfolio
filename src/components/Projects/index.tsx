@@ -41,8 +41,16 @@ export const Projects = () => {
         fontWeight={600}
         id="projects"
         paddingTop={10}
+        sx={{
+          fontSize: {
+            xs: "1.5rem",
+            sm: "2rem",
+            md: "2.5rem",
+            lg: "3rem",
+          },
+        }}
       >
-        Projetos pessoais
+        Projetos
       </Typography>
 
       <Box width="90%" margin="20px" alignItems="center" position="relative">
@@ -123,10 +131,33 @@ export const Projects = () => {
                 transition: "opacity 0.3s ease-in-out",
               }}
             >
-              <Typography color={"primary"} variant="h5" mb={2}>
+              <Typography
+                color={"primary"}
+                variant="h5"
+                mb={2}
+                sx={{
+                  fontSize: {
+                    xs: "0.8rem",
+                    sm: "1rem",
+                    md: "1.2rem",
+                    lg: "1.5rem",
+                  },
+                }}
+              >
                 Descrição:
               </Typography>
-              <Typography>{currentProject?.description}</Typography>
+              <Typography
+                sx={{
+                  fontSize: {
+                    xs: "0.8rem",
+                    sm: "1rem",
+                    md: "1.2rem",
+                    lg: "1.5rem",
+                  },
+                }}
+              >
+                {currentProject?.description}
+              </Typography>
             </Box>
           </Fade>
         </Paper>

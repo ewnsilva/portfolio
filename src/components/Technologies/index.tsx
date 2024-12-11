@@ -27,7 +27,19 @@ export const Technologies = () => {
 
   const TechnologiesImages = (title: string, filter: string): JSX.Element => (
     <>
-      <Typography variant="h5" color={"primary"}>
+      <Typography
+        variant="h5"
+        color={"primary"}
+        sx={{
+          p: 1,
+          fontSize: {
+            xs: "1.2rem",
+            sm: "1.5rem",
+            md: "1.8rem",
+            lg: "1.8rem",
+          },
+        }}
+      >
         {title}
       </Typography>
       <Box
@@ -72,8 +84,16 @@ export const Technologies = () => {
         variant="h4"
         id="tech"
         paddingTop={10}
+        sx={{
+          fontSize: {
+            xs: "1.5rem",
+            sm: "2rem",
+            md: "2.5rem",
+            lg: "3rem",
+          },
+        }}
       >
-        Ferramentas que domino
+        Ferramentas
       </Typography>
 
       <Paper
