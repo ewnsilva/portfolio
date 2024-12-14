@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Box, Typography, Tooltip, Popover, Paper } from "@mui/material";
 import { skills } from "utils";
+import { useTheme } from "hooks";
 
 export const Technologies = () => {
+  const { darkMode } = useTheme();
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [popoverContent, setPopoverContent] = useState<string>("");
 
@@ -57,6 +59,9 @@ export const Technologies = () => {
               sx={{
                 border: "2px solid",
                 borderColor: "primary.main",
+                backgroundColor: darkMode
+                  ? "rgba(255, 255, 255, 0.2)"
+                  : "rgba(0, 0, 0, 0.08)",
                 m: 1,
                 borderRadius: 3,
                 justifyItems: "center",

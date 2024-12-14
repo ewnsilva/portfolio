@@ -49,7 +49,7 @@ export const Contact = () => {
             href="https://www.linkedin.com/in/ericles-willian-263190200/"
             startIcon={<LinkedIn />}
           >
-            Acessar perfil
+            <b>Acessar perfil</b>
           </Button>
           <Typography>Para ver minhas experiencias</Typography>
         </Paper>
@@ -58,7 +58,7 @@ export const Contact = () => {
           sx={{ width: 250, textAlign: "center", p: 2, mx: matchesMd ? 0 : 10 }}
         >
           <Button href="mailto:ewnsilva@gmail.com" startIcon={<Email />}>
-            ewnsilva@gmail.com
+            <b>ewnsilva@gmail.com</b>
           </Button>
           <Typography>Para mais informações</Typography>
         </Paper>
