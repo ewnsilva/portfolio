@@ -22,6 +22,7 @@ export const Home = () => {
           <Typography
             color={"primary"}
             variant="h3"
+            mb={1}
             sx={{
               fontSize: {
                 xs: "1.5rem",
@@ -36,6 +37,7 @@ export const Home = () => {
           <Typography
             color={"primary"}
             variant="h4"
+            mb={matchesMd ? 2 : 0}
             sx={{
               fontSize: {
                 xs: "1.2rem",
@@ -57,7 +59,7 @@ export const Home = () => {
             border: "5px solid",
             borderRadius: 3,
             borderColor: "primary.main",
-            width: "50%",
+            width: "70%",
             maxWidth: "350px",
           }}
         />

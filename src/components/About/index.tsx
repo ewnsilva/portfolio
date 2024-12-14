@@ -39,7 +39,7 @@ export const About = () => {
             border: "5px solid",
             borderRadius: 3,
             borderColor: "primary.main",
-            width: matchesMd ? "60%" : "50%",
+            width: matchesMd ? "75%" : "50%",
             maxWidth: "450px",
             margin: "20px",
           }}
