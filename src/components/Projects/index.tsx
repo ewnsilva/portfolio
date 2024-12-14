@@ -9,10 +9,13 @@ import {
 } from "@mui/material";
 import { projects } from "utils";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
+import { useTheme } from "hooks";
 
-export const Projects = () => {
+export const Projects = (): JSX.Element => {
+  const { darkMode } = useTheme();
   const matchesMd = useMediaQuery("(min-width:1200px)");
-  const [preview, setPreview] = useState(3);
+  const matchesSm = useMediaQuery("(min-width:750px)");
+  const [preview, setPreview] = useState(2);
   const [fadeIn, setFadeIn] = useState(true);
 
   const handlePrev = () => {
@@ -65,59 +68,92 @@ export const Projects = () => {
           <Fade in={fadeIn} timeout={350}>
             <Box
               display="flex"
+              flexDirection="column"
               width={matchesMd ? "65%" : "100%"}
               alignItems="center"
               position="relative"
             >
-              <IconButton
-                disabled={preview === 3}
-                onClick={handleNext}
-                color={"secondary"}
-                sx={{
-                  position: "absolute",
-                  left: 10,
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  backgroundColor: "rgba(0, 0, 0, 0.3)",
-                  "&:hover": {
-                    backgroundColor: "rgba(0, 0, 0, 0.5)",
-                  },
-                }}
-              >
-                <ArrowLeft />
-              </IconButton>
+              <Box>
+                <Box display="flex" position="relative">
+                  <IconButton
+                    disabled={preview === 0}
+                    onClick={handlePrev}
+                    color={"secondary"}
+                    sx={{
+                      position: "absolute",
+                      left: 10,
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      backgroundColor: "rgba(0, 0, 0, 0.4)",
+                      "&:hover": {
+                        backgroundColor: "rgba(0, 0, 0, 0.6)",
+                      },
+                    }}
+                  >
+                    <ArrowLeft fontSize={matchesSm ? "large" : "small"} />
+                  </IconButton>
 
-              <Box display="flex" alignContent="center" width="100%">
-                <img
-                  src={currentProject?.image}
-                  alt={currentProject?.name}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    maxHeight: 750,
-                    minHeight: 200,
-                    objectFit: "cover",
-                    transition: "opacity 0.3s ease-in-out",
-                  }}
-                />
+                  <Box display="flex" alignContent="center" width="100%">
+                    <img
+                      src={currentProject?.image}
+                      alt={currentProject?.name}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        maxHeight: 750,
+                        minHeight: 200,
+                        objectFit: "cover",
+                        transition: "opacity 0.3s ease-in-out",
+                      }}
+                    />
+                  </Box>
+                  <IconButton
+                    disabled={preview === 5}
+                    onClick={handleNext}
+                    color={"secondary"}
+                    sx={{
+                      position: "absolute",
+                      right: 10,
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      backgroundColor: "rgba(0, 0, 0, 0.4)",
+                      "&:hover": {
+                        backgroundColor: "rgba(0, 0, 0, 0.6)",
+                      },
+                    }}
+                  >
+                    <ArrowRight fontSize={matchesSm ? "large" : "small"} />
+                  </IconButton>
+                </Box>
               </Box>
-              <IconButton
-                disabled={preview === 0}
-                onClick={handlePrev}
-                color={"secondary"}
-                sx={{
-                  position: "absolute",
-                  right: 10,
-                  top: "50%",
-                  transform: "translateY(-50%)",
-                  backgroundColor: "rgba(0, 0, 0, 0.3)",
-                  "&:hover": {
-                    backgroundColor: "rgba(0, 0, 0, 0.5)",
-                  },
-                }}
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                mt={2}
+                gap={1}
               >
-                <ArrowRight />
-              </IconButton>
+                {projects.map((_, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      width: 15,
+                      height: 15,
+                      border: "1px solid",
+                      borderColor: "primary.main",
+                      borderRadius: "50%",
+                      backgroundColor: darkMode
+                        ? index === preview
+                          ? "primary.main"
+                          : "transparent"
+                        : index === preview
+                        ? "primary.main"
+                        : "black",
+                      transition: "background-color 0.3s ease",
+                    }}
+                  />
+                ))}
+              </Box>
             </Box>
           </Fade>
 
@@ -135,12 +171,13 @@ export const Projects = () => {
                 color={"primary"}
                 variant="h5"
                 mb={2}
+                fontWeight={600}
                 sx={{
                   fontSize: {
                     xs: "0.8rem",
                     sm: "1rem",
                     md: "1.2rem",
-                    lg: "1.5rem",
+                    lg: "1.3rem",
                   },
                 }}
               >
@@ -148,15 +185,29 @@ export const Projects = () => {
               </Typography>
               <Typography
                 sx={{
+                  mb: 2,
                   fontSize: {
                     xs: "0.8rem",
                     sm: "1rem",
                     md: "1.2rem",
-                    lg: "1.5rem",
+                    lg: "1.3rem",
                   },
                 }}
               >
                 {currentProject?.description}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: {
+                    xs: "0.8rem",
+                    sm: "1rem",
+                    md: "1.2rem",
+                    lg: "1.3rem",
+                  },
+                }}
+              >
+                <b>Tecnologias: </b>
+                {currentProject?.technologies}
               </Typography>
             </Box>
           </Fade>
