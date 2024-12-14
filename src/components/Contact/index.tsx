@@ -1,123 +1,83 @@
-import React from "react";
-import {
-  Box,
-  Button,
-  FormControl,
-  TextField,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-
-const schema = yup.object().shape({
-  name: yup.string().required("Nome é obrigatório"),
-  email: yup.string().email("Email inválido").required("Email é obrigatório"),
-  message: yup.string().required("Mensagem é obrigatória"),
-});
+import { Box, Button, Paper, Typography, useMediaQuery } from "@mui/material";
+import { KeyboardArrowUp, Email, LinkedIn } from "@mui/icons-material";
 
 export const Contact = () => {
-  const matchesMd = useMediaQuery("(max-width:870px)");
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  const onSubmit = async (data: any) => {
-    console.log(data);
-    alert("Email enviado com sucesso!");
-    reset();
-  };
+  const matchesMd = useMediaQuery("(max-width:860px)");
 
   return (
-    <Box
-      mb={10}
-      display={"flex"}
-      flexDirection={"column"}
-      alignItems={"center"}
+    <Paper
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignContent: "center",
+        alignItems: "center",
+        height: matchesMd ? "500px" : "375px",
+        width: "100%",
+        justifyContent: "center",
+        position: "relative",
+      }}
     >
+      <Button
+        href="#home"
+        sx={{
+          borderRadius: 10,
+          minWidth: 15,
+          p: 1,
+          position: "absolute",
+          top: 0,
+        }}
+      >
+        <KeyboardArrowUp fontSize="large" />
+      </Button>
+      <Box
+        display="flex"
+        flexDirection={matchesMd ? "column" : "row"}
+        py={5}
+        my={5}
+      >
+        <Paper
+          elevation={5}
+          sx={{
+            width: 250,
+            textAlign: "center",
+            p: 2,
+            mx: matchesMd ? 0 : 10,
+            mb: matchesMd ? 5 : 0,
+          }}
+        >
+          <Button
+            href="https://www.linkedin.com/in/ericles-willian-263190200/"
+            startIcon={<LinkedIn />}
+          >
+            Acessar perfil
+          </Button>
+          <Typography>Para ver minhas experiencias</Typography>
+        </Paper>
+        <Paper
+          elevation={5}
+          sx={{ width: 250, textAlign: "center", p: 2, mx: matchesMd ? 0 : 10 }}
+        >
+          <Button href="mailto:ewnsilva@gmail.com" startIcon={<Email />}>
+            ewnsilva@gmail.com
+          </Button>
+          <Typography>Para mais informações</Typography>
+        </Paper>
+      </Box>
       <Typography
         id="contact"
-        color={"primary"}
-        variant="h4"
-        mb={2}
-        paddingTop={10}
+        mb={15}
+        fontWeight={600}
+        sx={{
+          fontSize: {
+            xs: "1rem",
+            sm: "1.2rem",
+            md: "1.4rem",
+            lg: "1.6rem",
+          },
+        }}
       >
-        Entre em Contato
+        Obrigado por acessar!
       </Typography>
-
-      <Box
-        display={"flex"}
-        flexDirection={matchesMd ? "column" : "row"}
-        justifyContent={matchesMd ? "center" : "space-between"}
-        alignItems={"center"}
-      >
-        <Box>
-          <Box>
-            <b>Email: </b>ewnsilva@gmail.com{" "}
-          </Box>
-          <Box>
-            <b>Telefone: </b>
-            {"(12) 98256-2145"}
-          </Box>
-        </Box>
-        <FormControl>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                width: "60%",
-                alignItems: "end",
-                border: "2px solid",
-                borderColor: "primary.main",
-                borderRadius: 3,
-                p: 2,
-              }}
-            >
-              <TextField
-                fullWidth
-                label={"Seu Nome"}
-                {...register("name")}
-                error={!!errors.name}
-                helperText={errors.name?.message}
-                sx={{ mb: 2 }}
-              />
-              <TextField
-                fullWidth
-                label={"Seu Email"}
-                {...register("email")}
-                error={!!errors.email}
-                helperText={errors.email?.message}
-                sx={{ mb: 2 }}
-              />
-              <TextField
-                fullWidth
-                label={"Sua Mensagem"}
-                multiline
-                minRows={4}
-                {...register("message")}
-                error={!!errors.message}
-                helperText={errors.message?.message}
-                sx={{ mb: 2 }}
-              />
-              <Button
-                variant="contained"
-                type="submit"
-                sx={{ textAlign: "end" }}
-              >
-                Enviar
-              </Button>
-            </Box>
-          </form>
-        </FormControl>
-      </Box>
-    </Box>
+    </Paper>
   );
 };
