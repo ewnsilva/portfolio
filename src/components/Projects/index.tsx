@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   IconButton,
@@ -23,7 +23,7 @@ export const Projects = (): JSX.Element => {
     setTimeout(() => {
       setPreview((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
       setFadeIn(true);
-    }, 350);
+    }, 550);
   };
 
   const handleNext = () => {
@@ -31,10 +31,17 @@ export const Projects = (): JSX.Element => {
     setTimeout(() => {
       setPreview((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
       setFadeIn(true);
-    }, 350);
+    }, 550);
   };
 
   const currentProject = projects.find((project) => project.number === preview);
+
+  useEffect(() => {
+    projects.forEach((project) => {
+      const img = new Image();
+      img.src = project.image;
+    });
+  }, []);
 
   return (
     <Box mb={5} display="flex" flexDirection="column" alignItems="center">
@@ -65,7 +72,7 @@ export const Projects = (): JSX.Element => {
             flexDirection: matchesMd ? "row" : "column",
           }}
         >
-          <Fade in={fadeIn} timeout={350}>
+          <Fade in={fadeIn} timeout={550}>
             <Box
               display="flex"
               flexDirection="column"
