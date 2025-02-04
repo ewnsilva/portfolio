@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Box, Typography, Tooltip, Popover, Paper } from "@mui/material";
 import { skills } from "utils";
 import { useTheme } from "hooks";
+import { Title } from "components";
 
 export const Technologies = () => {
   const { darkMode } = useTheme();
@@ -83,23 +84,9 @@ export const Technologies = () => {
 
   return (
     <Box mb={5} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-      <Typography
-        color={"primary"}
-        fontWeight={600}
-        variant="h4"
-        id="tech"
-        paddingTop={10}
-        sx={{
-          fontSize: {
-            xs: "1.5rem",
-            sm: "2rem",
-            md: "2.5rem",
-            lg: "3rem",
-          },
-        }}
-      >
+      <Title styles={{ textAlign: "center" }} id="tech">
         Ferramentas
-      </Typography>
+      </Title>
 
       <Paper
         elevation={5}
