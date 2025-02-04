@@ -1,29 +1,13 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Title } from "components";
 import { photos } from "utils";
 
 export const About = () => {
   const matchesMd = useMediaQuery("(max-width:870px)");
 
   return (
-    <Box mb={5}>
-      <Typography
-        id="about"
-        color={"primary"}
-        variant="h4"
-        fontWeight={600}
-        textAlign={"center"}
-        paddingTop={10}
-        sx={{
-          fontSize: {
-            xs: "1.5rem",
-            sm: "2rem",
-            md: "2.5rem",
-            lg: "3rem",
-          },
-        }}
-      >
-        Sobre
-      </Typography>
+    <Box mb={25}>
+      <Title styles={{ textAlign: "center" }}>Sobre</Title>
       <Box
         display={"flex"}
         flexDirection={matchesMd ? "column" : "row"}
