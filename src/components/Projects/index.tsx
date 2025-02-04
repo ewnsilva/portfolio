@@ -10,6 +10,7 @@ import {
 import { projects } from "utils";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import { useTheme } from "hooks";
+import { Title } from "components";
 
 export const Projects = (): JSX.Element => {
   const { darkMode } = useTheme();
@@ -45,23 +46,7 @@ export const Projects = (): JSX.Element => {
 
   return (
     <Box mb={5} display="flex" flexDirection="column" alignItems="center">
-      <Typography
-        color={"primary"}
-        variant="h4"
-        fontWeight={600}
-        id="projects"
-        paddingTop={10}
-        sx={{
-          fontSize: {
-            xs: "1.5rem",
-            sm: "2rem",
-            md: "2.5rem",
-            lg: "3rem",
-          },
-        }}
-      >
-        Projetos
-      </Typography>
+      <Title styles={{ textAlign: "center" }}>Projetos</Title>
 
       <Box width="90%" margin="20px" alignItems="center" position="relative">
         <Paper
