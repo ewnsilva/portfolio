@@ -46,7 +46,9 @@ export const Projects = (): JSX.Element => {
 
   return (
     <Box mb={5} display="flex" flexDirection="column" alignItems="center">
-      <Title styles={{ textAlign: "center" }}>Projetos</Title>
+      <Title styles={{ textAlign: "center" }} id="projects">
+        Projetos
+      </Title>
 
       <Box width="90%" margin="20px" alignItems="center" position="relative">
         <Paper

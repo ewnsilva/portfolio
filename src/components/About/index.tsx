@@ -7,7 +7,9 @@ export const About = () => {
 
   return (
     <Box mb={25}>
-      <Title styles={{ textAlign: "center" }}>Sobre</Title>
+      <Title styles={{ textAlign: "center" }} id="about">
+        Sobre
+      </Title>
       <Box
         display={"flex"}
         flexDirection={matchesMd ? "column" : "row"}

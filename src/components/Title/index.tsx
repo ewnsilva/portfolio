@@ -1,15 +1,16 @@
 import { SxProps, Typography } from "@mui/material";
 
-export const Title: React.FC<{ children: string; styles?: SxProps }> = ({
-  children,
-  styles,
-}) => {
+export const Title: React.FC<{
+  children: string;
+  styles?: SxProps;
+  id: string;
+}> = ({ children, styles, id }) => {
   return (
     <Typography
       color={"primary"}
       variant="h4"
       fontWeight={600}
-      id="projects"
+      id={id}
       paddingTop={10}
       sx={{
         ...styles,
