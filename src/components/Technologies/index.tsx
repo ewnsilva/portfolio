@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { Box, Typography, Tooltip, Popover, Paper } from "@mui/material";
 import { skills } from "utils";
 import { useTheme } from "hooks";

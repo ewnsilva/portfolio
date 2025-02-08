@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 import { Box } from "@mui/material";
 import {
   About,
