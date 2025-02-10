@@ -1,9 +1,10 @@
+import CarShowcase from "../assets/images/Projects/CarShowcase.png";
 import CryptoConverter from "../assets/images/Projects/CryptoConverter.png";
+import RetroBurgers from "../assets/images/Projects/RetroBurguers.png";
 import SeasonShop from "../assets/images/Projects/SeasonShop.png";
+import TheInvestment from "../assets/images/Projects/TheInvestment.png";
 import ToDoList from "../assets/images/Projects/ToDoList.png";
 import WeatherApp from "../assets/images/Projects/WeatherApp.png";
-import TheInvestment from "../assets/images/Projects/TheInvestment.png";
-import RetroBurgers from "../assets/images/Projects/RetroBurguers.png";
 
 export const projects = [
   {
@@ -24,9 +25,18 @@ export const projects = [
       "⚠️ Em construção - Trata-se de um projeto que representa um cardápio virtural de uma lanchonete, com temática dos anos 80, que contêm funcionálidades como filtro de búsca, seleção de categórias, adição de produtos a uma lista de pedidos (carrinho), escolha de quantidade, constumização de hamburguer, dentre outras funções.",
   },
   {
+    name: "Car Showcase",
+    image: CarShowcase,
+    number: 2,
+    technologies:
+      "HTML, CSS, Javascript, Typescript, React, Next.js, Tailwind CSS, HeadlessUI.",
+    description:
+      "O website Car Showcase (vitrine de carros) apresenta vários tipos de carros, apresentando informações abrangentes em um formato bem projetado com filtragem avançada, suporte de paginação e responsividade, permitindo que o site ofereça uma resposta imediata às mudanças de tela e/ou de dispositivos para uma experiência aprimorada do usuário.",
+  },
+  {
     name: "WeatherApp",
     image: WeatherApp,
-    number: 2,
+    number: 3,
     technologies:
       "HTML, CSS, Javascript, Typescript, React, Axios e Material UI",
     description:
@@ -35,7 +45,7 @@ export const projects = [
   {
     name: "SeasonShop",
     image: SeasonShop,
-    number: 3,
+    number: 4,
     technologies: "HTML, CSS, Javascript e React",
     description:
       "O projeto Season Shop trata-se se uma avaliação técnica para concorrer a uma vaga de estágio oferecida pela Season, onde consiste no desenvolvimento de uma loja com sistema de carrinho de compras, tendo como tecnologias uitlizadas HTML, CSS, Javascript e React.",
@@ -43,7 +53,7 @@ export const projects = [
   {
     name: "ToDoList",
     image: ToDoList,
-    number: 4,
+    number: 5,
     technologies: "HTML, CSS, Javascript e PHP",
     description:
       "O ToDoList trata-se de um projeto a qual foi proposto criar uma ferramenta de listagem de tarefas com layout responsiva, com intuito de por em pratica aprendizados sobre os conhecimentos iniciais sobre as tecnologias PHP e MySQL.",
@@ -51,7 +61,7 @@ export const projects = [
   {
     name: "CryptoConverter",
     image: CryptoConverter,
-    number: 5,
+    number: 6,
     technologies: "HTML, CSS e Javascript",
     description:
       "O projeto é um conversor de moeda de real (BRL) para bitcoin (BTC) pelo valor cotado em 2 de novembro de 2021, às 12h59. O desenvolvimento deste primeiro projeto tem como finalidade didática colocar em prática os conhecimentos adquiridos sobre lógica de programação e linguagem Javascript.",
