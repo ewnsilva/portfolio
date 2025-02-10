@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.f1f0d2e2.css",
-    "main.js": "/static/js/main.9e919528.js",
+    "main.js": "/static/js/main.a4bcc38f.js",
     "static/media/WeatherApp.png": "/static/media/WeatherApp.2cc5fbf34584f1802812.png",
     "static/media/TheInvestment.png": "/static/media/TheInvestment.c8a11125826cf00a276b.png",
+    "static/media/CarShowcase.png": "/static/media/CarShowcase.8db86114c87ebe245a94.png",
     "static/media/RetroBurguers.png": "/static/media/RetroBurguers.b958192f54d6bfb7dae7.png",
     "static/media/AboutPhoto.jpg": "/static/media/AboutPhoto.df4c378ea402c8437ad5.jpg",
     "static/media/React.png": "/static/media/React.d750f9b1455a886d3a6b.png",
@@ -37,6 +38,6 @@
   },
   "entrypoints": [
     "static/css/main.f1f0d2e2.css",
-    "static/js/main.9e919528.js"
+    "static/js/main.a4bcc38f.js"
   ]
 }
