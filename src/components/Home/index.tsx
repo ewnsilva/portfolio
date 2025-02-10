@@ -1,23 +1,39 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
+import { keyframes } from "@mui/system";
 
 import { photos } from "utils";
 
 export const Home = () => {
   const matchesMd = useMediaQuery("(max-width:870px)");
 
+  const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Pequeno deslocamento para um efeito suave */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
   return (
     <>
       <Typography id="home" variant="h3" sx={{ color: "transparent" }}>
         Home
       </Typography>
+
       <Box
-        mb={10}
+        mb={12}
         display={"flex"}
         flexDirection={matchesMd ? "column" : "row"}
         columnGap={10}
         alignItems={"center"}
         textAlign={"center"}
         justifyContent={"space-around"}
+        sx={{
+          animation: `${fadeIn} 1s ease-out`,
+        }}
       >
         <Box>
           <Typography
@@ -31,10 +47,14 @@ export const Home = () => {
                 md: "2.5rem",
                 lg: "3rem",
               },
+              textShadow: "3px 3px 6px rgba(0, 0, 0, 0.3)",
+              fontWeight: "bold",
+              animation: `${fadeIn} 1s ease-out`,
             }}
           >
             Ericles Willian
           </Typography>
+
           <Typography
             color={"primary"}
             variant="h4"
@@ -46,6 +66,9 @@ export const Home = () => {
                 md: "2rem",
                 lg: "2.5rem",
               },
+              textShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)",
+              fontWeight: 500,
+              animation: `${fadeIn} 1s ease-out`,
             }}
           >
             Desenvolvedor Front-End
@@ -62,6 +85,8 @@ export const Home = () => {
             borderColor: "primary.main",
             width: "70%",
             maxWidth: "350px",
+            boxShadow: "5px 5px 15px rgba(0, 0, 0, 0.3)",
+            animation: `${fadeIn} 1s ease-out`,
           }}
         />
       </Box>
