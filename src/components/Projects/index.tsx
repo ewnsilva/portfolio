@@ -45,7 +45,7 @@ export const Projects = (): JSX.Element => {
   }, []);
 
   return (
-    <Box mb={5} display="flex" flexDirection="column" alignItems="center">
+    <Box mb={10} display="flex" flexDirection="column" alignItems="center">
       <Title styles={{ textAlign: "center" }} id="projects">
         Projetos
       </Title>
@@ -93,7 +93,6 @@ export const Projects = (): JSX.Element => {
                       alt={currentProject?.name}
                       style={{
                         width: "100%",
-                        height: "auto",
                         maxHeight: 750,
                         minHeight: 200,
                         objectFit: "cover",
@@ -102,7 +101,7 @@ export const Projects = (): JSX.Element => {
                     />
                   </Box>
                   <IconButton
-                    disabled={preview === 5}
+                    disabled={preview === 6}
                     onClick={handleNext}
                     color={"secondary"}
                     sx={{
