@@ -7,10 +7,11 @@ export const Home = () => {
 
   return (
     <>
-      <Typography color={"primary"} id="home" />
+      <Typography id="home" variant="h3" sx={{ color: "transparent" }}>
+        Home
+      </Typography>
       <Box
-        mt={11}
-        mb={5}
+        mb={10}
         display={"flex"}
         flexDirection={matchesMd ? "column" : "row"}
         columnGap={10}
