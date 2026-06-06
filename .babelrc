@@ -1,14 +1,20 @@
 {
   "presets": [
-    ["@babel/preset-env", {
-      "targets": {
-        "browsers": ["last 2 versions", "ie >= 11"]
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "ie >= 11"]
+        }
       }
-    }],
-    "@babel/preset-react",
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ],
     "@babel/preset-typescript"
   ],
-  "plugins": [
-    "@babel/plugin-proposal-private-property-in-object"
-  ]
+  "plugins": ["@babel/plugin-proposal-private-property-in-object"]
 }

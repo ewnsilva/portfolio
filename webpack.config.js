@@ -19,7 +19,14 @@ module.exports = (env, argv) => {
       port: 3000,
       historyApiFallback: true,
       hot: true,
-      compress: true,
+      open: true,
+      static: {
+        directory: path.resolve(__dirname, "public"),
+        serveIndex: false,
+      },
+      client: {
+        overlay: true,
+      },
     },
     resolve: {
       extensions: [".tsx", ".ts", ".jsx", ".js"],
@@ -46,7 +53,7 @@ module.exports = (env, argv) => {
                   "@babel/preset-env",
                   { targets: { browsers: ["last 2 versions"] } },
                 ],
-                "@babel/preset-react",
+                ["@babel/preset-react", { runtime: "automatic" }],
                 "@babel/preset-typescript",
               ],
               plugins: ["@babel/plugin-proposal-private-property-in-object"],
@@ -80,13 +87,20 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "./public/index.html",
-        favicon: "./public/favicon.ico",
+        template: path.resolve(__dirname, "public/index.html"),
       }),
       new CopyPlugin({
         patterns: [
-          { from: "public/manifest.json", to: "manifest.json" },
-          { from: "public/logo192.png", to: "logo192.png" },
+          {
+            from: path.resolve(__dirname, "public/manifest.json"),
+            to: "manifest.json",
+            noErrorOnMissing: true,
+          },
+          {
+            from: path.resolve(__dirname, "public/logo192.jpg"),
+            to: "logo192.jpg",
+            noErrorOnMissing: true,
+          },
         ],
       }),
     ],
