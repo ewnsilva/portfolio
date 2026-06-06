@@ -1,0 +1,83 @@
+{
+  "translation": {
+    "header": {
+      "name": "Ericles Willian",
+      "contact": "Get in touch",
+      "linkedin": "Visit LinkedIn",
+      "github": "Visit GitHub",
+      "darkTheme": "Dark Theme",
+      "lightTheme": "Light Theme",
+      "currentLanguage": "Current Language"
+    },
+    "home": {
+      "name": "Ericles Willian",
+      "role": "Front-End Developer"
+    },
+    "about": {
+      "title": "About",
+      "description": "I am a Front-end Developer focused on continuous improvement and problem-solving through clean code development, always aiming to optimize the entire system and ensure an excellent visual and functional experience for the user."
+    },
+    "contact": {
+      "title": "Contact",
+      "linkedinLabel": "Visit profile",
+      "linkedinDescription": "To see my experience",
+      "emailLabel": "ewnsilva@gmail.com",
+      "emailDescription": "For more information",
+      "thanks": "Thank you for visiting!"
+    },
+    "technologies": {
+      "title": "Tools",
+      "tech": "Technologies",
+      "software": "Software",
+      "management": "Management"
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Description:",
+      "technologies": "Technologies:",
+      "list": [
+        {
+          "name": "TheInvestment",
+          "technologies": "React Native, Expo, Typescript and Node.js",
+          "description": "📈 Future project - It will be a mobile application focused on investment content, with good study materials aimed at financial education."
+        },
+        {
+          "name": "Retro-Burgers",
+          "technologies": "HTML, CSS and Javascript, Typescript, React, Node.js, Axios, Material UI and Styled-Components.",
+          "description": "⚠️ Under construction - It is a project that represents a virtual menu of a snack bar, with 80s themed aesthetics, which contains functionalities such as search filter, category selection, addition of products to an order list (cart), quantity selection, hamburger customization, among other functions."
+        },
+        {
+          "name": "Car Showcase",
+          "technologies": "HTML, CSS, Javascript, Typescript, React, Next.js, Tailwind CSS, HeadlessUI.",
+          "description": "The Car Showcase website presents various types of cars, displaying comprehensive information in a well-designed format with advanced filtering, pagination support and responsiveness, allowing the site to provide an immediate response to screen changes and/or devices for an enhanced user experience."
+        },
+        {
+          "name": "WeatherApp",
+          "technologies": "HTML, CSS, Javascript, Typescript, React, Axios and Material UI",
+          "description": "The project in question is an application to check the current temperature of a city corresponding to what was typed by the user. The development of this application aims to learn and improve the use of Typescript technology, accompanied by React, Material UI and Axios libraries."
+        },
+        {
+          "name": "SeasonShop",
+          "technologies": "HTML, CSS, Javascript and React",
+          "description": "The Season Shop project is a technical assessment to compete for an internship position offered by Season, which consists of developing a store with a shopping cart system, using HTML, CSS, Javascript and React technologies."
+        },
+        {
+          "name": "ToDoList",
+          "technologies": "HTML, CSS, Javascript and PHP",
+          "description": "The ToDoList is a project that was proposed to create a task listing tool with responsive layout, with the purpose of practicing learning about initial knowledge of PHP and MySQL technologies."
+        },
+        {
+          "name": "CryptoConverter",
+          "technologies": "HTML, CSS and Javascript",
+          "description": "The project is a currency converter from Brazilian Real (BRL) to Bitcoin (BTC) at the rate quoted on November 2, 2021, at 12:59 PM. The development of this first project aims to put into practice the knowledge acquired about programming logic and Javascript language."
+        }
+      ]
+    },
+    "languages": {
+      "title": "Languages",
+      "pt": "Portuguese",
+      "en": "English",
+      "es": "Spanish"
+    }
+  }
+}

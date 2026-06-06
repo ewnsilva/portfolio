@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   AppBar,
@@ -18,12 +19,14 @@ import {
   LinkedIn,
   WhatsApp,
   Menu,
+  Language,
 } from "@mui/icons-material";
 
 import { useTheme } from "hooks/useTheme";
 
 export const Header = () => {
   const { darkMode, changeTheme } = useTheme();
+  const { t, i18n } = useTranslation();
 
   const matchesSm = useMediaQuery("(max-width:650px)");
 
@@ -40,6 +43,13 @@ export const Header = () => {
     setAnchorEl(null);
   };
 
+  const handleChangeLanguage = () => {
+    const languages = ["pt", "en", "es"];
+    const currentIndex = languages.indexOf(i18n.language);
+    const nextIndex = (currentIndex + 1) % languages.length;
+    i18n.changeLanguage(languages[nextIndex]);
+  };
+
   const open = Boolean(anchorEl);
 
   return (
@@ -53,7 +63,7 @@ export const Header = () => {
         >
           <Box display={"flex"} alignItems={"baseline"}>
             <Typography color={"secondary"} ml={1} fontWeight={600}>
-              Ericles Willian
+              {t("header.name")}
             </Typography>
           </Box>
           <Box display={"flex"} justifyContent={"end"}>
@@ -67,9 +77,9 @@ export const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Entre em contato
+                  {t("header.contact")}
                 </Button>
-                <Tooltip title="Acessar LinkedIn">
+                <Tooltip title={t("header.linkedin")}>
                   <IconButton
                     color="secondary"
                     href="https://www.linkedin.com/in/ericles-willian-263190200/"
@@ -81,7 +91,7 @@ export const Header = () => {
                     <LinkedIn />
                   </IconButton>
                 </Tooltip>
-                <Tooltip title="Acessar GitHub">
+                <Tooltip title={t("header.github")}>
                   <IconButton
                     color="secondary"
                     href="https://github.com/ewnsilva"
@@ -108,7 +118,7 @@ export const Header = () => {
                 </Button>
               </>
             )}
-            <Tooltip title={darkMode ? "Tema Escuro" : "Tema Claro"}>
+            <Tooltip title={darkMode ? t("header.darkTheme") : t("header.lightTheme")}>
               <IconButton
                 color="secondary"
                 edge="end"
@@ -117,6 +127,17 @@ export const Header = () => {
                 sx={{ ml: 3, mr: 1 }}
               >
                 {darkMode ? <DarkMode /> : <BrightnessHigh />}
+              </IconButton>
+            </Tooltip>
+            <Tooltip title={t("header.currentLanguage")}>
+              <IconButton
+                color="secondary"
+                edge="end"
+                aria-label="language"
+                onClick={handleChangeLanguage}
+                sx={{ ml: 3, mr: 1 }}
+              >
+                <Language />
               </IconButton>
             </Tooltip>
           </Box>
@@ -150,7 +171,7 @@ export const Header = () => {
             }}
           >
             <Box display={"flex"} justifyContent={"space-around"} pb={2}>
-              <Tooltip title="Acessar LinkedIn">
+              <Tooltip title={t("header.linkedin")}>
                 <IconButton
                   color="primary"
                   href="https://www.linkedin.com/in/ericles-willian-263190200/"
@@ -162,7 +183,7 @@ export const Header = () => {
                   <LinkedIn />
                 </IconButton>
               </Tooltip>
-              <Tooltip title="Acessar GitHub">
+              <Tooltip title={t("header.github")}>
                 <IconButton
                   href="https://github.com/ewnsilva"
                   color="primary"
@@ -182,7 +203,7 @@ export const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Entre em contato
+              {t("header.contact")}
             </Button>
           </Box>
         </Popover>

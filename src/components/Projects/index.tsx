@@ -1,4 +1,5 @@
 import { JSX, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Box,
   IconButton,
@@ -14,6 +15,7 @@ import { Title } from "components";
 
 export const Projects = (): JSX.Element => {
   const { darkMode } = useTheme();
+  const { t } = useTranslation();
   const matchesMd = useMediaQuery("(min-width:1200px)");
   const matchesSm = useMediaQuery("(min-width:750px)");
   const [preview, setPreview] = useState(2);
@@ -47,7 +49,7 @@ export const Projects = (): JSX.Element => {
   return (
     <Box mb={10} display="flex" flexDirection="column" alignItems="center">
       <Title styles={{ textAlign: "center" }} id="projects">
-        Projetos
+        {t("projects.title")}
       </Title>
 
       <Box width="90%" margin="20px" alignItems="center" position="relative">
@@ -174,7 +176,7 @@ export const Projects = (): JSX.Element => {
                   },
                 }}
               >
-                Descrição:
+                {t("projects.description")}
               </Typography>
               <Typography
                 sx={{
@@ -187,7 +189,7 @@ export const Projects = (): JSX.Element => {
                   },
                 }}
               >
-                {currentProject?.description}
+                {currentProject && t(`projects.list.${currentProject.number}.description`)}
               </Typography>
               <Typography
                 sx={{
@@ -199,8 +201,8 @@ export const Projects = (): JSX.Element => {
                   },
                 }}
               >
-                <b>Tecnologias: </b>
-                {currentProject?.technologies}
+                <b>{t("projects.technologies")} </b>
+                {currentProject && t(`projects.list.${currentProject.number}.technologies`)}
               </Typography>
             </Box>
           </Fade>

@@ -1,7 +1,9 @@
 import { Box, Button, Paper, Typography, useMediaQuery } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { KeyboardArrowUp, Email, LinkedIn } from "@mui/icons-material";
 
 export const Contact = () => {
+  const { t } = useTranslation();
   const matchesMd = useMediaQuery("(max-width:860px)");
 
   return (
@@ -49,18 +51,18 @@ export const Contact = () => {
             href="https://www.linkedin.com/in/ericles-willian-263190200/"
             startIcon={<LinkedIn />}
           >
-            <b>Acessar perfil</b>
+            <b>{t("contact.linkedinLabel")}</b>
           </Button>
-          <Typography>Para ver minhas experiencias</Typography>
+          <Typography>{t("contact.linkedinDescription")}</Typography>
         </Paper>
         <Paper
           elevation={5}
           sx={{ width: 250, textAlign: "center", p: 2, mx: matchesMd ? 0 : 10 }}
         >
           <Button href="mailto:ewnsilva@gmail.com" startIcon={<Email />}>
-            <b>ewnsilva@gmail.com</b>
+            <b>{t("contact.emailLabel")}</b>
           </Button>
-          <Typography>Para mais informações</Typography>
+          <Typography>{t("contact.emailDescription")}</Typography>
         </Paper>
       </Box>
       <Typography
@@ -76,7 +78,7 @@ export const Contact = () => {
           },
         }}
       >
-        Obrigado por acessar!
+        {t("contact.thanks")}
       </Typography>
     </Paper>
   );

@@ -1,11 +1,13 @@
 import { JSX, useState } from "react";
 import { Box, Typography, Tooltip, Popover, Paper } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { skills } from "utils";
 import { useTheme } from "hooks";
 import { Title } from "components";
 
 export const Technologies = () => {
   const { darkMode } = useTheme();
+  const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [popoverContent, setPopoverContent] = useState<string>("");
 
@@ -85,7 +87,7 @@ export const Technologies = () => {
   return (
     <Box mb={5} display={"flex"} flexDirection={"column"} alignItems={"center"}>
       <Title styles={{ textAlign: "center" }} id="tech">
-        Ferramentas
+        {t("technologies.title")}
       </Title>
 
       <Paper
@@ -99,9 +101,9 @@ export const Technologies = () => {
           width: "90%",
         }}
       >
-        {TechnologiesImages("Tecnologias", "Technology")}
-        {TechnologiesImages("Software", "Software")}
-        {TechnologiesImages("Gestão", "Management")}
+        {TechnologiesImages(t("technologies.tech"), "Technology")}
+        {TechnologiesImages(t("technologies.software"), "Software")}
+        {TechnologiesImages(t("technologies.management"), "Management")}
 
         <Popover
           open={isPopoverOpen}

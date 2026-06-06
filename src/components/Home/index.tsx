@@ -1,9 +1,11 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { keyframes } from "@mui/system";
+import { useTranslation } from "react-i18next";
 
 import { photos } from "utils";
 
 export const Home = () => {
+  const { t } = useTranslation();
   const matchesMd = useMediaQuery("(max-width:870px)");
 
   const fadeIn = keyframes`
@@ -52,7 +54,7 @@ export const Home = () => {
               animation: `${fadeIn} 1s ease-out`,
             }}
           >
-            Ericles Willian
+            {t("home.name")}
           </Typography>
 
           <Typography
@@ -71,7 +73,7 @@ export const Home = () => {
               animation: `${fadeIn} 1s ease-out`,
             }}
           >
-            Desenvolvedor Front-End
+            {t("home.role")}
           </Typography>
         </Box>
 

@@ -1,14 +1,16 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { Title } from "components";
 import { photos } from "utils";
 
 export const About = () => {
+  const { t } = useTranslation();
   const matchesMd = useMediaQuery("(max-width:870px)");
 
   return (
     <Box mb={25}>
       <Title styles={{ textAlign: "center" }} id="about">
-        Sobre
+        {t("about.title")}
       </Title>
       <Box
         display={"flex"}
@@ -43,10 +45,7 @@ export const About = () => {
             },
           }}
         >
-          Sou Desenvolvedor Front-end focado em aperfeiçoamento continuo e
-          resolução de problemas de através de confecção de código limpo, sempre
-          visando otimiziar o sistema como um todo e garantir uma ótima
-          experiencia visual e funcional para o usuário.
+          {t("about.description")}
         </Typography>
       </Box>
     </Box>
