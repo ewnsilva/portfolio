@@ -1,83 +1,81 @@
 {
-  "translation": {
-    "header": {
-      "name": "Ericles Willian",
-      "contact": "Ponte en contacto",
-      "linkedin": "Visitar LinkedIn",
-      "github": "Visitar GitHub",
-      "darkTheme": "Tema Oscuro",
-      "lightTheme": "Tema Claro",
-      "currentLanguage": "Idioma actual"
-    },
-    "home": {
-      "name": "Ericles Willian",
-      "role": "Desarrollador Front-End"
-    },
-    "about": {
-      "title": "Acerca de",
-      "description": "Soy Desarrollador Front-end enfocado en la mejora continua y la resolución de problemas a través del desarrollo de código limpio, siempre buscando optimizar el sistema completo y garantizar una excelente experiencia visual y funcional para el usuario."
-    },
-    "contact": {
-      "title": "Contacto",
-      "linkedinLabel": "Visitar perfil",
-      "linkedinDescription": "Para ver mi experiencia",
-      "emailLabel": "ewnsilva@gmail.com",
-      "emailDescription": "Para más información",
-      "thanks": "¡Gracias por visitar!"
-    },
-    "technologies": {
-      "title": "Herramientas",
-      "tech": "Tecnologías",
-      "software": "Software",
-      "management": "Gestión"
-    },
-    "projects": {
-      "title": "Proyectos",
-      "description": "Descripción:",
-      "technologies": "Tecnologías:",
-      "list": [
-        {
-          "name": "TheInvestment",
-          "technologies": "React Native, Expo, Typescript y Node.js",
-          "description": "📈 Proyecto futuro - Será una aplicación móvil enfocada en contenido de inversiones, con buenos materiales de estudio dirigidos a educación financiera."
-        },
-        {
-          "name": "Retro-Burgers",
-          "technologies": "HTML, CSS y Javascript, Typescript, React, Node.js, Axios, Material UI y Styled-Components.",
-          "description": "⚠️ En construcción - Es un proyecto que representa un menú virtual de una hamburguesería, con temática de los años 80, que contiene funcionalidades como filtro de búsqueda, selección de categorías, adición de productos a una lista de pedidos (carrito), selección de cantidad, personalización de hamburguesas, entre otras funciones."
-        },
-        {
-          "name": "Car Showcase",
-          "technologies": "HTML, CSS, Javascript, Typescript, React, Next.js, Tailwind CSS, HeadlessUI.",
-          "description": "El sitio web Car Showcase presenta varios tipos de autos, mostrando información completa en un formato bien diseñado con filtrado avanzado, compatibilidad con paginación y capacidad de respuesta, permitiendo que el sitio ofrezca una respuesta inmediata a cambios de pantalla y/o dispositivos para una experiencia mejorada del usuario."
-        },
-        {
-          "name": "WeatherApp",
-          "technologies": "HTML, CSS, Javascript, Typescript, React, Axios y Material UI",
-          "description": "El proyecto en cuestión es una aplicación para verificar la temperatura actual de una ciudad correspondiente a lo que fue escrito por el usuario. El desarrollo de esta aplicación tiene como objetivo aprender y mejorar el uso de la tecnología Typescript, acompañado de las bibliotecas React, Material UI y Axios."
-        },
-        {
-          "name": "SeasonShop",
-          "technologies": "HTML, CSS, Javascript y React",
-          "description": "El proyecto Season Shop es una evaluación técnica para optar a una posición de pasantía ofrecida por Season, que consiste en el desarrollo de una tienda con sistema de carrito de compras, utilizando tecnologías HTML, CSS, Javascript y React."
-        },
-        {
-          "name": "ToDoList",
-          "technologies": "HTML, CSS, Javascript y PHP",
-          "description": "El ToDoList es un proyecto que fue propuesto para crear una herramienta de listado de tareas con diseño responsivo, con el propósito de practicar el aprendizaje sobre el conocimiento inicial de las tecnologías PHP y MySQL."
-        },
-        {
-          "name": "CryptoConverter",
-          "technologies": "HTML, CSS y Javascript",
-          "description": "El proyecto es un convertidor de moneda de real brasileño (BRL) a bitcoin (BTC) al tipo de cambio cotizado el 2 de noviembre de 2021, a las 12:59. El desarrollo de este primer proyecto tiene como objetivo poner en práctica los conocimientos adquiridos sobre lógica de programación y lenguaje Javascript."
-        }
-      ]
-    },
-    "languages": {
-      "title": "Idiomas",
-      "pt": "Portugués",
-      "en": "Inglés",
-      "es": "Español"
-    }
+  "header": {
+    "name": "Ericles Willian",
+    "contact": "Ponte en contacto",
+    "linkedin": "Visitar LinkedIn",
+    "github": "Visitar GitHub",
+    "darkTheme": "Tema Oscuro",
+    "lightTheme": "Tema Claro",
+    "currentLanguage": "Idioma actual"
+  },
+  "home": {
+    "name": "Ericles Willian",
+    "role": "Desarrollador Front-End"
+  },
+  "about": {
+    "title": "Acerca de",
+    "description": "Soy Desarrollador Front-end enfocado en la mejora continua y la resolución de problemas a través del desarrollo de código limpio, siempre buscando optimizar el sistema completo y garantizar una excelente experiencia visual y funcional para el usuario."
+  },
+  "contact": {
+    "title": "Contacto",
+    "linkedinLabel": "Visitar perfil",
+    "linkedinDescription": "Para ver mi experiencia",
+    "emailLabel": "ewnsilva@gmail.com",
+    "emailDescription": "Para más información",
+    "thanks": "¡Gracias por visitar!"
+  },
+  "technologies": {
+    "title": "Herramientas",
+    "tech": "Tecnologías",
+    "software": "Software",
+    "management": "Gestión"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description": "Descripción:",
+    "technologies": "Tecnologías:",
+    "list": [
+      {
+        "name": "TheInvestment",
+        "technologies": "React Native, Expo, Typescript y Node.js",
+        "description": "📈 Proyecto futuro - Será una aplicación móvil enfocada en contenido de inversiones, con buenos materiales de estudio dirigidos a educación financiera."
+      },
+      {
+        "name": "Retro-Burgers",
+        "technologies": "HTML, CSS y Javascript, Typescript, React, Node.js, Axios, Material UI y Styled-Components.",
+        "description": "⚠️ En construcción - Es un proyecto que representa un menú virtual de una hamburguesería, con temática de los años 80, que contiene funcionalidades como filtro de búsqueda, selección de categorías, adición de productos a una lista de pedidos (carrito), selección de cantidad, personalización de hamburguesas, entre otras funciones."
+      },
+      {
+        "name": "Car Showcase",
+        "technologies": "HTML, CSS, Javascript, Typescript, React, Next.js, Tailwind CSS, HeadlessUI.",
+        "description": "El sitio web Car Showcase presenta varios tipos de autos, mostrando información completa en un formato bien diseñado con filtrado avanzado, compatibilidad con paginación y capacidad de respuesta, permitiendo que el sitio ofrezca una respuesta inmediata a cambios de pantalla y/o dispositivos para una experiencia mejorada del usuario."
+      },
+      {
+        "name": "WeatherApp",
+        "technologies": "HTML, CSS, Javascript, Typescript, React, Axios y Material UI",
+        "description": "El proyecto en cuestión es una aplicación para verificar la temperatura actual de una ciudad correspondiente a lo que fue escrito por el usuario. El desarrollo de esta aplicación tiene como objetivo aprender y mejorar el uso de la tecnología Typescript, acompañado de las bibliotecas React, Material UI y Axios."
+      },
+      {
+        "name": "SeasonShop",
+        "technologies": "HTML, CSS, Javascript y React",
+        "description": "El proyecto Season Shop es una evaluación técnica para optar a una posición de pasantía ofrecida por Season, que consiste en el desarrollo de una tienda con sistema de carrito de compras, utilizando tecnologías HTML, CSS, Javascript y React."
+      },
+      {
+        "name": "ToDoList",
+        "technologies": "HTML, CSS, Javascript y PHP",
+        "description": "El ToDoList es un proyecto que fue propuesto para crear una herramienta de listado de tareas con diseño responsivo, con el propósito de practicar el aprendizaje sobre el conocimiento inicial de las tecnologías PHP y MySQL."
+      },
+      {
+        "name": "CryptoConverter",
+        "technologies": "HTML, CSS y Javascript",
+        "description": "El proyecto es un convertidor de moneda de real brasileño (BRL) a bitcoin (BTC) al tipo de cambio cotizado el 2 de noviembre de 2021, a las 12:59. El desarrollo de este primer proyecto tiene como objetivo poner en práctica los conocimientos adquiridos sobre lógica de programación y lenguaje Javascript."
+      }
+    ]
+  },
+  "languages": {
+    "title": "Idiomas",
+    "pt": "Portugués",
+    "en": "Inglés",
+    "es": "Español"
   }
 }
