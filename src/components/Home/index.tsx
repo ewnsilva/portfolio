@@ -1,11 +1,11 @@
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { keyframes } from "@mui/system";
-import { useTranslation } from "react-i18next";
+import { useLanguage } from "hooks/useLanguage";
 
 import { photos } from "utils";
 
 export const Home = () => {
-  const { t } = useTranslation();
+  const { t } = useLanguage();
   const matchesMd = useMediaQuery("(max-width:870px)");
 
   const fadeIn = keyframes`

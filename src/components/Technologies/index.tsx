@@ -1,19 +1,19 @@
 import { JSX, useState } from "react";
 import { Box, Typography, Tooltip, Popover, Paper } from "@mui/material";
-import { useTranslation } from "react-i18next";
+import { useLanguage } from "hooks/useLanguage";
 import { skills } from "utils";
 import { useTheme } from "hooks";
 import { Title } from "components";
 
 export const Technologies = () => {
   const { darkMode } = useTheme();
-  const { t } = useTranslation();
+  const { t } = useLanguage();
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [popoverContent, setPopoverContent] = useState<string>("");
 
   const handlePopoverOpen = (
     event: React.MouseEvent<HTMLElement>,
-    name: string
+    name: string,
   ) => {
     setAnchorEl(event.currentTarget);
     setPopoverContent(name);

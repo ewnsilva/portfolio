@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useLanguage } from "hooks/useLanguage";
 
 import {
   AppBar,
@@ -26,7 +26,7 @@ import { useTheme } from "hooks/useTheme";
 
 export const Header = () => {
   const { darkMode, changeTheme } = useTheme();
-  const { t, i18n } = useTranslation();
+  const { t, language, changeLanguage } = useLanguage();
 
   const matchesSm = useMediaQuery("(max-width:650px)");
 
@@ -44,10 +44,13 @@ export const Header = () => {
   };
 
   const handleChangeLanguage = () => {
-    const languages = ["pt", "en", "es"];
-    const currentIndex = languages.indexOf(i18n.language);
-    const nextIndex = (currentIndex + 1) % languages.length;
-    i18n.changeLanguage(languages[nextIndex]);
+    if (language === "en") {
+      changeLanguage("pt");
+    } else if (language === "pt") {
+      changeLanguage("es");
+    } else if (language === "es") {
+      changeLanguage("en");
+    }
   };
 
   const open = Boolean(anchorEl);
@@ -118,7 +121,9 @@ export const Header = () => {
                 </Button>
               </>
             )}
-            <Tooltip title={darkMode ? t("header.darkTheme") : t("header.lightTheme")}>
+            <Tooltip
+              title={darkMode ? t("header.darkTheme") : t("header.lightTheme")}
+            >
               <IconButton
                 color="secondary"
                 edge="end"

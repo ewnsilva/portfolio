@@ -1,5 +1,5 @@
 import { JSX, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useLanguage } from "hooks/useLanguage";
 import {
   Box,
   IconButton,
@@ -15,7 +15,7 @@ import { Title } from "components";
 
 export const Projects = (): JSX.Element => {
   const { darkMode } = useTheme();
-  const { t } = useTranslation();
+  const { t } = useLanguage();
   const matchesMd = useMediaQuery("(min-width:1200px)");
   const matchesSm = useMediaQuery("(min-width:750px)");
   const [preview, setPreview] = useState(2);
@@ -142,8 +142,8 @@ export const Projects = (): JSX.Element => {
                           ? "primary.main"
                           : "transparent"
                         : index === preview
-                        ? "primary.main"
-                        : "black",
+                          ? "primary.main"
+                          : "black",
                       transition: "background-color 0.3s ease",
                     }}
                   />
@@ -189,7 +189,8 @@ export const Projects = (): JSX.Element => {
                   },
                 }}
               >
-                {currentProject && t(`projects.list.${currentProject.number}.description`)}
+                {currentProject &&
+                  t(`projects.list.${currentProject.number}.description`)}
               </Typography>
               <Typography
                 sx={{
@@ -202,7 +203,8 @@ export const Projects = (): JSX.Element => {
                 }}
               >
                 <b>{t("projects.technologies")} </b>
-                {currentProject && t(`projects.list.${currentProject.number}.technologies`)}
+                {currentProject &&
+                  t(`projects.list.${currentProject.number}.technologies`)}
               </Typography>
             </Box>
           </Fade>

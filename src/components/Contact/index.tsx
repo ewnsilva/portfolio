@@ -1,9 +1,9 @@
 import { Box, Button, Paper, Typography, useMediaQuery } from "@mui/material";
-import { useTranslation } from "react-i18next";
+import { useLanguage } from "hooks/useLanguage";
 import { KeyboardArrowUp, Email, LinkedIn } from "@mui/icons-material";
 
 export const Contact = () => {
-  const { t } = useTranslation();
+  const { t } = useLanguage();
   const matchesMd = useMediaQuery("(max-width:860px)");
 
   return (
