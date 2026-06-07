@@ -97,8 +97,8 @@ module.exports = (env, argv) => {
             noErrorOnMissing: true,
           },
           {
-            from: path.resolve(__dirname, "public/logo192.jpg"),
-            to: "logo192.jpg",
+            from: path.resolve(__dirname, "public/favicon.png"),
+            to: "favicon.png",
             noErrorOnMissing: true,
           },
         ],
