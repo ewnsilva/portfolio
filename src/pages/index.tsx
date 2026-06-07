@@ -19,7 +19,7 @@ export const Portfolio = (): JSX.Element => {
         flexDirection: "column",
         justifyContent: "center",
         backgroundColor: "background.default",
-        rowGap: 5,
+        rowGap: 1.5,
       }}
     >
       <Header />
