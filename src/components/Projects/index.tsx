@@ -7,6 +7,7 @@ import {
   useMediaQuery,
   Fade,
   Paper,
+  useTheme as useMuiTheme,
 } from "@mui/material";
 import { projects } from "utils";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
@@ -16,9 +17,12 @@ import { Title } from "components";
 export const Projects = (): JSX.Element => {
   const { darkMode } = useTheme();
   const { t } = useLanguage();
-  const matchesMd = useMediaQuery("(min-width:1200px)");
-  const matchesSm = useMediaQuery("(min-width:750px)");
-  const [preview, setPreview] = useState(2);
+  const muiTheme = useMuiTheme();
+
+  const isDesktop = useMediaQuery(muiTheme.breakpoints.up("lg"));
+  const isMobile = useMediaQuery(muiTheme.breakpoints.down("sm"));
+
+  const [preview, setPreview] = useState(1);
   const [fadeIn, setFadeIn] = useState(true);
 
   const handlePrev = () => {
@@ -26,7 +30,7 @@ export const Projects = (): JSX.Element => {
     setTimeout(() => {
       setPreview((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
       setFadeIn(true);
-    }, 550);
+    }, 400);
   };
 
   const handleNext = () => {
@@ -34,10 +38,11 @@ export const Projects = (): JSX.Element => {
     setTimeout(() => {
       setPreview((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
       setFadeIn(true);
-    }, 550);
+    }, 400);
   };
 
-  const currentProject = projects.find((project) => project.number === preview);
+  const currentProject =
+    projects.find((project) => project.number === preview) || projects[0];
 
   useEffect(() => {
     projects.forEach((project) => {
@@ -47,167 +52,255 @@ export const Projects = (): JSX.Element => {
   }, []);
 
   return (
-    <Box mb={10} display="flex" flexDirection="column" alignItems="center">
+    <Box
+      mb={isMobile ? 8 : 15}
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      width="100%"
+    >
       <Title styles={{ textAlign: "center" }} id="projects">
         {t("projects.title")}
       </Title>
 
-      <Box width="90%" margin="20px" alignItems="center" position="relative">
+      <Box
+        width="100%"
+        maxWidth="1300px"
+        sx={{ px: { xs: 2, sm: 4 }, mt: 4, position: "relative" }}
+      >
         <Paper
-          elevation={5}
+          elevation={0}
           sx={{
             display: "flex",
-            p: 2,
-            flexDirection: matchesMd ? "row" : "column",
+            p: { xs: 2, sm: 4 },
+            gap: { xs: 3, md: 6 },
+            flexDirection: isDesktop ? "row" : "column",
+            borderRadius: "24px",
+            border: "1px solid",
+            borderColor: darkMode
+              ? "rgba(255, 255, 255, 0.05)"
+              : "rgba(0, 0, 0, 0.05)",
+            backgroundColor: (theme) => theme.palette.background.paper,
+            boxShadow: darkMode
+              ? "0px 20px 50px rgba(0, 0, 0, 0.3)"
+              : "0px 20px 50px rgba(0, 90, 116, 0.1)",
           }}
         >
-          <Fade in={fadeIn} timeout={550}>
+          <Box
+            display="flex"
+            flexDirection="column"
+            width={isDesktop ? "60%" : "100%"}
+            alignItems="center"
+            position="relative"
+          >
+            <Box
+              width="100%"
+              sx={{
+                position: "relative",
+                overflow: "hidden",
+                borderRadius: "16px",
+
+                aspectRatio: isMobile ? "4/3" : "16/9",
+
+                maxHeight: { xs: "280px", sm: "400px", md: "480px" },
+                width: "100%",
+                border: "1px solid",
+                borderColor: darkMode
+                  ? "rgba(255, 255, 255, 0.1)"
+                  : "rgba(0, 0, 0, 0.08)",
+                boxShadow: "0px 10px 30px rgba(0,0,0,0.15)",
+                backgroundColor: "#000",
+              }}
+            >
+              <Fade in={fadeIn} timeout={400}>
+                <Box sx={{ width: "100%", height: "100%" }}>
+                  <img
+                    src={currentProject?.image}
+                    alt={currentProject?.name}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "top center",
+                    }}
+                  />
+                </Box>
+              </Fade>
+
+              <IconButton
+                onClick={handlePrev}
+                color="primary"
+                sx={{
+                  position: "absolute",
+                  left: 16,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  backgroundColor: darkMode
+                    ? "rgba(0, 38, 65, 0.7)"
+                    : "rgba(250, 250, 250, 0.8)",
+                  backdropFilter: "blur(4px)",
+                  border: "1px solid",
+                  borderColor: "primary.main",
+                  transition: "all 0.2s ease",
+                  "&:hover": {
+                    backgroundColor: "primary.main",
+                    color: "white",
+                    transform: "translateY(-50%) scale(1.08)",
+                  },
+                }}
+              >
+                <ArrowLeft fontSize={isMobile ? "small" : "medium"} />
+              </IconButton>
+
+              <IconButton
+                onClick={handleNext}
+                color="primary"
+                sx={{
+                  position: "absolute",
+                  right: 16,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  backgroundColor: darkMode
+                    ? "rgba(0, 38, 65, 0.7)"
+                    : "rgba(250, 250, 250, 0.8)",
+                  backdropFilter: "blur(4px)",
+                  border: "1px solid",
+                  borderColor: "primary.main",
+                  transition: "all 0.2s ease",
+                  "&:hover": {
+                    backgroundColor: "primary.main",
+                    color: "white",
+                    transform: "translateY(-50%) scale(1.08)",
+                  },
+                }}
+              >
+                <ArrowRight fontSize={isMobile ? "small" : "medium"} />
+              </IconButton>
+            </Box>
+
             <Box
               display="flex"
-              flexDirection="column"
-              width={matchesMd ? "65%" : "100%"}
+              justifyContent="center"
               alignItems="center"
-              position="relative"
+              mt={2.5}
+              gap={1.2}
             >
-              <Box>
-                <Box display="flex" position="relative">
-                  <IconButton
-                    disabled={preview === 0}
-                    onClick={handlePrev}
-                    color={"secondary"}
-                    sx={{
-                      position: "absolute",
-                      left: 10,
-                      top: "50%",
-                      transform: "translateY(-50%)",
-                      backgroundColor: "rgba(0, 0, 0, 0.4)",
-                      "&:hover": {
-                        backgroundColor: "rgba(0, 0, 0, 0.6)",
-                      },
-                    }}
-                  >
-                    <ArrowLeft fontSize={matchesSm ? "large" : "small"} />
-                  </IconButton>
-
-                  <Box display="flex" alignContent="center" width="100%">
-                    <img
-                      src={currentProject?.image}
-                      alt={currentProject?.name}
-                      style={{
-                        width: "100%",
-                        maxHeight: 750,
-                        minHeight: 200,
-                        objectFit: "cover",
-                        transition: "opacity 0.3s ease-in-out",
-                      }}
-                    />
-                  </Box>
-                  <IconButton
-                    disabled={preview === 6}
-                    onClick={handleNext}
-                    color={"secondary"}
-                    sx={{
-                      position: "absolute",
-                      right: 10,
-                      top: "50%",
-                      transform: "translateY(-50%)",
-                      backgroundColor: "rgba(0, 0, 0, 0.4)",
-                      "&:hover": {
-                        backgroundColor: "rgba(0, 0, 0, 0.6)",
-                      },
-                    }}
-                  >
-                    <ArrowRight fontSize={matchesSm ? "large" : "small"} />
-                  </IconButton>
-                </Box>
-              </Box>
-              <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                mt={2}
-                gap={1}
-              >
-                {projects.map((_, index) => (
+              {projects.map((_, index) => {
+                const isActive = index === preview;
+                return (
                   <Box
                     key={index}
                     sx={{
-                      width: 15,
-                      height: 15,
-                      border: "1px solid",
-                      borderColor: "primary.main",
-                      borderRadius: "50%",
-                      backgroundColor: darkMode
-                        ? index === preview
-                          ? "primary.main"
-                          : "transparent"
-                        : index === preview
-                          ? "primary.main"
-                          : "black",
-                      transition: "background-color 0.3s ease",
+                      width: isActive ? 28 : 10,
+                      height: 10,
+                      borderRadius: "5px",
+                      backgroundColor: isActive
+                        ? "primary.main"
+                        : darkMode
+                          ? "rgba(216, 216, 216, 0.3)"
+                          : "rgba(0, 90, 116, 0.2)",
+                      transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      if (index !== preview) {
+                        setFadeIn(false);
+                        setTimeout(() => {
+                          setPreview(index);
+                          setFadeIn(true);
+                        }, 400);
+                      }
                     }}
                   />
-                ))}
-              </Box>
+                );
+              })}
             </Box>
-          </Fade>
+          </Box>
 
-          <Fade in={fadeIn} timeout={350}>
-            <Box
-              sx={{
-                p: 2,
-                width: matchesMd ? "35%" : "100%",
-                alignContent: "center",
-                textAlign: "justify",
-                transition: "opacity 0.3s ease-in-out",
-              }}
-            >
-              <Typography
-                color={"primary"}
-                variant="h5"
-                mb={2}
-                fontWeight={600}
+          <Box
+            width={isDesktop ? "40%" : "100%"}
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            sx={{ mt: isDesktop ? 0 : 2 }}
+          >
+            <Fade in={fadeIn} timeout={400}>
+              <Box
                 sx={{
-                  fontSize: {
-                    xs: "0.8rem",
-                    sm: "1rem",
-                    md: "1.2rem",
-                    lg: "1.3rem",
-                  },
+                  textAlign: "left",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2,
                 }}
               >
-                {t("projects.description")}
-              </Typography>
-              <Typography
-                sx={{
-                  mb: 2,
-                  fontSize: {
-                    xs: "0.8rem",
-                    sm: "1rem",
-                    md: "1.2rem",
-                    lg: "1.3rem",
-                  },
-                }}
-              >
-                {currentProject &&
-                  t(`projects.list.${currentProject.number}.description`)}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "0.8rem",
-                    sm: "1rem",
-                    md: "1.2rem",
-                    lg: "1.3rem",
-                  },
-                }}
-              >
-                <b>{t("projects.technologies")} </b>
-                {currentProject &&
-                  t(`projects.list.${currentProject.number}.technologies`)}
-              </Typography>
-            </Box>
-          </Fade>
+                <Typography
+                  color="primary"
+                  variant="h4"
+                  fontWeight={800}
+                  sx={{
+                    fontSize: {
+                      xs: "1.4rem",
+                      sm: "1.6rem",
+                      md: "1.8rem",
+                      lg: "2rem",
+                    },
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  {currentProject?.name}
+                </Typography>
+
+                <Typography
+                  sx={{
+                    fontSize: { xs: "0.95rem", sm: "1rem", md: "1.05rem" },
+                    lineHeight: 1.7,
+                    color: "text.primary",
+                    opacity: 0.9,
+
+                    minHeight: isDesktop ? "100px" : "auto",
+                  }}
+                >
+                  {t(`projects.list.${currentProject?.number}.description`)}
+                </Typography>
+
+                <Box
+                  mt={1}
+                  p={2}
+                  sx={{
+                    borderRadius: "12px",
+                    backgroundColor: darkMode
+                      ? "rgba(0, 38, 65, 0.4)"
+                      : "rgba(0, 90, 116, 0.05)",
+                    borderLeft: "4px solid",
+                    borderColor: "primary.main",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: { xs: "0.85rem", sm: "0.9rem", md: "0.95rem" },
+                      lineHeight: 1.5,
+                      color: darkMode
+                        ? "rgba(216, 216, 216, 0.8)"
+                        : "primary.main",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontWeight: 700,
+                        textTransform: "uppercase",
+                        fontSize: "0.8rem",
+                        display: "block",
+                        marginBottom: "4px",
+                      }}
+                    >
+                      {t("projects.technologies")}
+                    </span>
+                    {t(`projects.list.${currentProject?.number}.technologies`)}
+                  </Typography>
+                </Box>
+              </Box>
+            </Fade>
+          </Box>
         </Paper>
       </Box>
     </Box>
