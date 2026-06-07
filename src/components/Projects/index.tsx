@@ -7,10 +7,11 @@ import {
   useMediaQuery,
   Fade,
   Paper,
+  Button,
   useTheme as useMuiTheme,
 } from "@mui/material";
 import { projects } from "utils";
-import { ArrowLeft, ArrowRight } from "@mui/icons-material";
+import { ArrowLeft, ArrowRight, Launch } from "@mui/icons-material";
 import { useTheme } from "hooks";
 import { Title } from "components";
 
@@ -22,7 +23,7 @@ export const Projects = (): JSX.Element => {
   const isDesktop = useMediaQuery(muiTheme.breakpoints.up("lg"));
   const isMobile = useMediaQuery(muiTheme.breakpoints.down("sm"));
 
-  const [preview, setPreview] = useState(1);
+  const [preview, setPreview] = useState(1); // Mantido o padrão iniciando no projeto 1 (Retro-Burgers)
   const [fadeIn, setFadeIn] = useState(true);
 
   const handlePrev = () => {
@@ -99,9 +100,7 @@ export const Projects = (): JSX.Element => {
                 position: "relative",
                 overflow: "hidden",
                 borderRadius: "16px",
-
                 aspectRatio: isMobile ? "4/3" : "16/9",
-
                 maxHeight: { xs: "280px", sm: "400px", md: "480px" },
                 width: "100%",
                 border: "1px solid",
@@ -255,13 +254,51 @@ export const Projects = (): JSX.Element => {
                     fontSize: { xs: "0.95rem", sm: "1rem", md: "1.05rem" },
                     lineHeight: 1.7,
                     color: "text.primary",
+                    textAlign: "justify",
                     opacity: 0.9,
-
-                    minHeight: isDesktop ? "100px" : "auto",
+                    minHeight: isDesktop ? "120px" : "auto",
                   }}
                 >
                   {t(`projects.list.${currentProject?.number}.description`)}
                 </Typography>
+
+                {currentProject?.url && (
+                  <Box display="flex" mt={0.5}>
+                    <Button
+                      component="a"
+                      href={currentProject.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="contained"
+                      color="primary"
+                      endIcon={
+                        <Launch sx={{ fontSize: "0.9rem !important" }} />
+                      }
+                      sx={{
+                        textTransform: "none",
+                        fontWeight: 600,
+                        borderRadius: "10px",
+                        px: 3,
+                        py: 0.8,
+                        fontSize: "0.9rem",
+                        boxShadow: (theme) =>
+                          `0px 6px 16px ${theme.palette.primary.main}30`,
+                        transition: "all 0.2s ease-in-out",
+                        "&:hover": {
+                          transform: "translateY(-2px)",
+                          backgroundColor: (theme) =>
+                            darkMode
+                              ? `${theme.palette.primary.main}cc`
+                              : theme.palette.primary.dark,
+                          boxShadow: (theme) =>
+                            `0px 8px 20px ${theme.palette.primary.main}50`,
+                        },
+                      }}
+                    >
+                      {t("projects.viewProject") || "Acessar Projeto"}
+                    </Button>
+                  </Box>
+                )}
 
                 <Box
                   mt={1}
@@ -279,6 +316,7 @@ export const Projects = (): JSX.Element => {
                     sx={{
                       fontSize: { xs: "0.85rem", sm: "0.9rem", md: "0.95rem" },
                       lineHeight: 1.5,
+                      textAlign: "justify",
                       color: darkMode
                         ? "rgba(216, 216, 216, 0.8)"
                         : "primary.main",

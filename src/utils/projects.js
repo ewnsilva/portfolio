@@ -19,10 +19,11 @@ export const projects = [
     name: "Retro-Burgers",
     image: RetroBurgers,
     number: 1,
+    url: "https://retro-burgers.vercel.app/",
     technologies:
-      "HTML, CSS e Javascript, Typescript, React, Node.js, Axios, Material UI e Styled-Components.",
+      "React, Node.js, TypeScript, React Query, Material UI, Vite, Vitest, Express, SQLite, Sequelize, Howler, Webpack.",
     description:
-      "⚠️ Em construção - Trata-se de um projeto que representa um cardápio virtural de uma lanchonete, com temática dos anos 80, que contêm funcionálidades como filtro de búsca, seleção de categórias, adição de produtos a uma lista de pedidos (carrinho), escolha de quantidade, constumização de hamburguer, dentre outras funções.",
+      "E-commerce simulado completo com temática Synthwave dos anos 80. Possui navegação por categorias dinâmicas via API, personalização de produtos com adicionais, carrinho persistente, internacionalização (PT/EN), trilha sonora exclusiva por tema e testes unitários com Vitest.",
   },
   {
     name: "Car Showcase",

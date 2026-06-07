@@ -41,6 +41,7 @@
     "title": "Projetos",
     "description": "Descrição:",
     "technologies": "Tecnologias:",
+    "viewProject": "Acessar Projeto",
     "list": [
       {
         "name": "TheInvestment",
@@ -49,8 +50,8 @@
       },
       {
         "name": "Retro-Burgers",
-        "technologies": "HTML, CSS e Javascript, Typescript, React, Node.js, Axios, Material UI e Styled-Components.",
-        "description": "⚠️ Em construção - Trata-se de um projeto que representa um cardápio virtural de uma lanchonete, com temática dos anos 80, que contêm funcionálidades como filtro de búsca, seleção de categórias, adição de produtos a uma lista de pedidos (carrinho), escolha de quantidade, constumização de hamburguer, dentre outras funções."
+        "description": "Plataforma de E-commerce completa com temática Synthwave dos anos 80. Apresenta um fluxo dinâmico alimentado por API contendo navegação por categorias, personalização avançada de produtos com adicionais, carrinho de compras persistente e modal de resumo. Conta com suporte completo à internacionalização, troca de temas visuais com trilhas sonoras exclusivas via Howler.js, códigos fortemente tipados e cobertura de testes unitários.",
+        "technologies": "TypeScript, React, React Router, React Query, Material UI, i18next, Axios, Howler, Webpack, Vitest, Testing Library, Node.js, Express, SQLite, Sequelize."
       },
       {
         "name": "Car Showcase",

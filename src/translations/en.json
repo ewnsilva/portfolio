@@ -41,6 +41,7 @@
     "title": "Projects",
     "description": "Description:",
     "technologies": "Technologies:",
+    "viewProject": "Access Project",
     "list": [
       {
         "name": "TheInvestment",
@@ -49,8 +50,8 @@
       },
       {
         "name": "Retro-Burgers",
-        "technologies": "HTML, CSS and Javascript, Typescript, React, Node.js, Axios, Material UI and Styled-Components.",
-        "description": "⚠️ Under construction - It is a project that represents a virtual menu of a snack bar, with 80s themed aesthetics, which contains functionalities such as search filter, category selection, addition of products to an order list (cart), quantity selection, hamburger customization, among other functions."
+        "technologies": "TypeScript, React, React Router, React Query, Material UI, i18next, Axios, Howler, Webpack, Vitest, Testing Library, Node.js, Express, SQLite, Sequelize.",
+        "description": "Complete e-commerce platform with Synthwave theme from the 80s. Features a dynamic flow powered by an API with category navigation, advanced product customization with add-ons, persistent shopping cart and summary modal. Includes full internationalization support, visual theme switching with exclusive soundtracks via Howler.js, strongly typed code and unit test coverage."
       },
       {
         "name": "Car Showcase",
