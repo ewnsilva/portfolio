@@ -22,6 +22,7 @@ export const About = () => {
 
   return (
     <Box
+      mt={matchesMd ? 3 : 5}
       mb={matchesMd ? 12 : 23}
       sx={{
         animation: `${fadeInUp} 1.2s ease-out`,
@@ -47,7 +48,7 @@ export const About = () => {
         <Box
           sx={{
             width: matchesMd ? "100%" : "55%",
-            textAlign: matchesMd ? "center" : "left",
+            textAlign: matchesMd ? "center" : "justify",
             color: "text.primary",
             fontFamily: "inherit",
           }}

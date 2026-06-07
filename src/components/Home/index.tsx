@@ -31,7 +31,6 @@ export const Home = () => {
       </Typography>
 
       <Box
-        mb={20}
         display={"flex"}
         flexDirection={matchesMd ? "column-reverse" : "row"}
         alignItems={"center"}
@@ -44,7 +43,7 @@ export const Home = () => {
           width: "100%",
           margin: "0 auto",
           animation: `${fadeIn} 1s ease-out`,
-          px: { xs: 2, md: 4 },
+          px: { xs: 2, md: 5 },
         }}
       >
         <Box
