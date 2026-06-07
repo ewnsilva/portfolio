@@ -1,5 +1,5 @@
 import AboutPhoto from "../assets/photos/AboutPhoto.jpg";
-import HomePhoto from "../assets/photos/HomePhoto.jpg";
+import HomePhoto from "../assets/photos/HomePhoto.png";
 
 export const photos = [
   {

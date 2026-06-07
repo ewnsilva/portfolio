@@ -6,15 +6,22 @@
     "github": "Visit GitHub",
     "darkTheme": "Dark Theme",
     "lightTheme": "Light Theme",
-    "currentLanguage": "Current Language"
+    "currentLanguage": "English"
   },
   "home": {
     "name": "Ericles Willian",
-    "role": "Front-End Developer"
+    "role": "Front-End Developer",
+    "intro": "Developing modern, robust and high-performance interfaces. Specialist in transforming ideas into clean code and smooth digital experiences.",
+    "buttons": {
+      "contact": "Contact",
+      "projects": "View Projects"
+    }
   },
   "about": {
     "title": "About",
-    "description": "I am a Front-end Developer focused on continuous improvement and problem-solving through clean code development, always aiming to optimize the entire system and ensure an excellent visual and functional experience for the user."
+    "paragraph1": "I am a <strong>Front-End Developer</strong> with solid experience in creating high-performance, scalable interfaces focused on user experience (UX/UI). My background includes design conception and development of complex systems.",
+    "paragraph2": "Currently, I integrate teams focused on modern <strong>Micro Front-end</strong> architectures, using <strong>JavaScript, TypeScript and React</strong>. I work strongly in performance optimization, legacy code refactoring and advanced componentization with <strong>Material UI</strong>.",
+    "paragraph3": "Driven by continuous improvement, I use agile practices (Scrum) with tools like JIRA and Bitbucket to turn complex business rules into smooth, clean and efficient digital solutions."
   },
   "contact": {
     "title": "Contact",
