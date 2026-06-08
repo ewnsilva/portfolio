@@ -247,13 +247,11 @@ export const Header = () => {
               boxShadow: darkMode
                 ? "0px 10px 30px rgba(0,0,0,0.5)"
                 : "0px 10px 30px rgba(0,90,116,0.15)",
-              border: "1px solid",
+              border: "2px solid",
               borderColor: darkMode
                 ? "rgba(255, 255, 255, 0.08)"
                 : "rgba(0, 90, 116, 0.1)",
-              backgroundColor: darkMode
-                ? "rgba(0, 41, 102, 0.95)"
-                : "rgba(200, 242, 254, 0.95)",
+              backgroundColor: "background.paper",
               backdropFilter: "blur(10px)",
             },
           }}
