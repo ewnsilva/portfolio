@@ -1,3 +1,26 @@
+// Novas importações de habilidades adicionadas para nível Pleno/Sênior.
+// As linhas abaixo estão comentadas para que você possa adicionar as imagens correspondentes no seu diretório:
+
+// import ReactQuery from "../assets/images/Technologies/ReactQuery.png";
+// import Zustand from "../assets/images/Technologies/Zustand.png";
+// import ReduxToolkit from "../assets/images/Technologies/ReduxToolkit.png";
+// import NextJs from "../assets/images/Technologies/NextJs.png";
+// import MicroFrontend from "../assets/images/Technologies/MicroFrontend.png";
+// import Vitest from "../assets/images/Technologies/Vitest.png";
+// import Jest from "../assets/images/Technologies/Jest.png";
+// import TestingLibrary from "../assets/images/Technologies/TestingLibrary.png";
+// import SonarQube from "../assets/images/Technologies/SonarQube.png";
+// import ESLint from "../assets/images/Technologies/ESLint.png";
+// import NodeJs from "../assets/images/Technologies/NodeJs.png";
+// import Express from "../assets/images/Technologies/Express.png";
+// import SQLite from "../assets/images/Technologies/SQLite.png";
+// import Sequelize from "../assets/images/Technologies/Sequelize.png";
+// import Webpack from "../assets/images/Technologies/Webpack.png";
+// import ReactNative from "../assets/images/Technologies/ReactNative.png";
+// import Bitbucket from "../assets/images/Technologies/Bitbucket.png";
+// import GitHubActions from "../assets/images/Technologies/GitHubActions.png";
+// import AICoding from "../assets/images/Technologies/AICoding.png";
+
 import Axios from "../assets/images/Technologies/Axios.png";
 import Boostrap from "../assets/images/Technologies/Bootstrap.png";
 import ChatGPT from "../assets/images/Technologies/ChatGPT.png";
@@ -29,149 +52,51 @@ import UXUI from "../assets/images/Technologies/UX-UI.png";
 import VsCode from "../assets/images/Technologies/VsCode.png";
 
 export const skills = [
-  {
-    name: "HTML",
-    category: "Technology",
-    image: HTML,
-  },
-  {
-    name: "CSS",
-    category: "Technology",
-    image: CSS,
-  },
-  {
-    name: "Design Responsivo",
-    category: "Technology",
-    image: Responsive,
-  },
-  {
-    name: "Git",
-    category: "Technology",
-    image: Git,
-  },
-  {
-    name: "JavaScript",
-    category: "Technology",
-    image: JavaScript,
-  },
-  {
-    name: "Typescript",
-    category: "Technology",
-    image: Typescript,
-  },
-  {
-    name: "Boostrap",
-    category: "Technology",
-    image: Boostrap,
-  },
-  {
-    name: "SASS",
-    category: "Technology",
-    image: SASS,
-  },
-  {
-    name: "Style-Components",
-    category: "Technology",
-    image: StyleComponents,
-  },
-  {
-    name: "React",
-    category: "Technology",
-    image: React,
-  },
-  {
-    name: "React-Router",
-    category: "Technology",
-    image: ReactRouter,
-  },
-  {
-    name: "Axios",
-    category: "Technology",
-    image: Axios,
-  },
-  {
-    name: "Docker",
-    category: "Technology",
-    image: Docker,
-  },
-  {
-    name: "Material Ui",
-    category: "Technology",
-    image: MaterialUi,
-  },
-  {
-    name: "Cypress",
-    category: "Technology",
-    image: CypressJs,
-  },
-  {
-    name: "PostgreeSQL",
-    category: "Technology",
-    image: PostgreeSQL,
-  },
-  {
-    name: "ClickUp",
-    category: "Management",
-    image: ClickUp,
-  },
-  {
-    name: "Jira",
-    category: "Management",
-    image: Jira,
-  },
-  {
-    name: "Confluence",
-    category: "Management",
-    image: Confluence,
-  },
-  {
-    name: "Kanban",
-    category: "Management",
-    image: Kanban,
-  },
-  {
-    name: "Scrum",
-    category: "Management",
-    image: Scrum,
-  },
-  {
-    name: "Microsoft Office",
-    category: "Management",
-    image: MicrosoftOffice,
-  },
-  {
-    name: "Libre Office",
-    category: "Management",
-    image: LibreOffice,
-  },
-  {
-    name: "UX/UI",
-    category: "Management",
-    image: UXUI,
-  },
-  {
-    name: "Figma",
-    category: "Software",
-    image: Figma,
-  },
-  {
-    name: "Chat GPT",
-    category: "Software",
-    image: ChatGPT,
-  },
-  {
-    name: "Insomnia",
-    category: "Software",
-    image: Insomnia,
-  },
-  {
-    name: "Photoshop",
-    category: "Software",
-    image: Photoshop,
-  },
-  {
-    name: "VsCode",
-    category: "Software",
-    image: VsCode,
-  },
+  // --- FRONTEND ---
+  { name: "HTML5", category: "Frontend", image: HTML },
+  { name: "CSS3", category: "Frontend", image: CSS },
+  { name: "Design Responsivo", category: "Frontend", image: Responsive },
+  { name: "JavaScript (ES6+)", category: "Frontend", image: JavaScript },
+  { name: "TypeScript", category: "Frontend", image: Typescript },
+  { name: "React", category: "Frontend", image: React },
+  { name: "React-Router", category: "Frontend", image: ReactRouter },
+  // { name: "TanStack Query", category: "Frontend", image: ReactQuery },
+  // { name: "Zustand / Redux", category: "Frontend", image: Zustand },
+  // { name: "Next.js", category: "Frontend", image: NextJs },
+  // { name: "Micro Frontends", category: "Frontend", image: MicroFrontend },
+  // { name: "React Native / Expo", category: "Frontend", image: ReactNative },
+  { name: "Material UI", category: "Frontend", image: MaterialUi },
+  { name: "Styled-Components", category: "Frontend", image: StyleComponents },
+  { name: "SASS", category: "Frontend", image: SASS },
+  { name: "Bootstrap", category: "Frontend", image: Boostrap },
+  { name: "Axios", category: "Frontend", image: Axios },
+
+  // --- BACKEND & TESTING ---
+  // { name: "Node.js & Express", category: "Backend", image: NodeJs },
+  { name: "PostgreSQL", category: "Backend", image: PostgreeSQL },
+  // { name: "SQLite & Sequelize", category: "Backend", image: SQLite },
+  // { name: "Vitest / Jest", category: "Backend", image: Vitest },
+  // { name: "Testing Library", category: "Backend", image: TestingLibrary },
+  { name: "Cypress", category: "Backend", image: CypressJs },
+
+  // --- DEVOPS & TOOLS ---
+  { name: "Git", category: "Tools", image: Git },
+  // { name: "Webpack 5", category: "Tools", image: Webpack },
+  { name: "Docker", category: "Tools", image: Docker },
+  { name: "VS Code", category: "Tools", image: VsCode },
+  { name: "Insomnia", category: "Tools", image: Insomnia },
+  { name: "Figma", category: "Tools", image: Figma },
+  { name: "Photoshop", category: "Tools", image: Photoshop },
+  { name: "ChatGPT", category: "Tools", image: ChatGPT },
+  // { name: "AI-Assisted Coding", category: "Tools", image: AICoding },
+
+  // --- MANAGEMENT ---
+  { name: "Jira", category: "Management", image: Jira },
+  { name: "ClickUp", category: "Management", image: ClickUp },
+  { name: "Confluence", category: "Management", image: Confluence },
+  { name: "Scrum", category: "Management", image: Scrum },
+  { name: "Kanban", category: "Management", image: Kanban },
+  { name: "UX/UI Design", category: "Management", image: UXUI },
+  { name: "Microsoft Office", category: "Management", image: MicrosoftOffice },
+  { name: "LibreOffice", category: "Management", image: LibreOffice },
 ];
