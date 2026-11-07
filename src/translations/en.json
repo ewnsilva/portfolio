@@ -32,10 +32,11 @@
     "thanks": "Thank you for visiting!"
   },
   "technologies": {
-    "title": "Tools",
-    "tech": "Technologies",
-    "software": "Software",
-    "management": "Management"
+    "title": "Technologies & Skills",
+    "frontend": "Frontend Core & Architecture",
+    "backend": "Back-End & Testing",
+    "tools": "Tools, DevOps & AI",
+    "management": "Management & Methodologies"
   },
   "projects": {
     "title": "Projects",
