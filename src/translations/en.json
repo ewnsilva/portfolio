@@ -42,6 +42,7 @@
     "description": "Description:",
     "technologies": "Technologies:",
     "viewProject": "Access Project",
+    "githubRepo": "GitHub Repo",
     "list": [
       {
         "name": "TheInvestment",

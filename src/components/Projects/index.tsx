@@ -11,7 +11,7 @@ import {
   useTheme as useMuiTheme,
 } from "@mui/material";
 import { projects } from "utils";
-import { ArrowLeft, ArrowRight, Launch } from "@mui/icons-material";
+import { ArrowLeft, ArrowRight, Launch, GitHub } from "@mui/icons-material";
 import { useTheme } from "hooks";
 import { Title } from "components";
 
@@ -23,7 +23,7 @@ export const Projects = (): JSX.Element => {
   const isDesktop = useMediaQuery(muiTheme.breakpoints.up("lg"));
   const isMobile = useMediaQuery(muiTheme.breakpoints.down("sm"));
 
-  const [preview, setPreview] = useState(1); // Mantido o padrão iniciando no projeto 1 (Retro-Burgers)
+  const [preview, setPreview] = useState(1);
   const [fadeIn, setFadeIn] = useState(true);
 
   const handlePrev = () => {
@@ -262,8 +262,9 @@ export const Projects = (): JSX.Element => {
                   {t(`projects.list.${currentProject?.number}.description`)}
                 </Typography>
 
-                {currentProject?.url && (
-                  <Box display="flex" mt={0.5}>
+                {/* CONTAINER DOS BOTÕES DE AÇÃO (LIVE PREVIEW & GITHUB) */}
+                <Box display="flex" flexWrap="wrap" gap={1.5} mt={0.5}>
+                  {currentProject?.url && (
                     <Button
                       component="a"
                       href={currentProject.url}
@@ -278,7 +279,7 @@ export const Projects = (): JSX.Element => {
                         textTransform: "none",
                         fontWeight: 600,
                         borderRadius: "10px",
-                        px: 3,
+                        px: 2.5,
                         py: 0.8,
                         fontSize: "0.9rem",
                         boxShadow: (theme) =>
@@ -295,10 +296,44 @@ export const Projects = (): JSX.Element => {
                         },
                       }}
                     >
-                      {t("projects.viewProject") || "Acessar Projeto"}
+                      {t("projects.viewProject")}
                     </Button>
-                  </Box>
-                )}
+                  )}
+
+                  {currentProject?.github && (
+                    <Button
+                      component="a"
+                      href={currentProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="outlined"
+                      color="primary"
+                      startIcon={
+                        <GitHub sx={{ fontSize: "1rem !important" }} />
+                      }
+                      sx={{
+                        textTransform: "none",
+                        fontWeight: 600,
+                        borderRadius: "10px",
+                        px: 2.5,
+                        py: 0.8,
+                        fontSize: "0.9rem",
+                        borderWidth: "1.5px",
+                        transition: "all 0.2s ease-in-out",
+                        "&:hover": {
+                          transform: "translateY(-2px)",
+                          borderWidth: "1.5px",
+                          backgroundColor: (theme) =>
+                            darkMode
+                              ? `${theme.palette.primary.main}15`
+                              : `${theme.palette.primary.main}0a`,
+                        },
+                      }}
+                    >
+                      {t("projects.githubRepo")}
+                    </Button>
+                  )}
+                </Box>
 
                 <Box
                   mt={1}

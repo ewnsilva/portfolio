@@ -20,6 +20,7 @@ export const projects = [
     image: RetroBurgers,
     number: 1,
     url: "https://retro-burgers.vercel.app/",
+    github: "https://github.com/ewnsilva/retro-burgers",
     technologies:
       "React, Node.js, TypeScript, React Query, Material UI, Vite, Vitest, Express, SQLite, Sequelize, Howler, Webpack.",
     description:
@@ -29,6 +30,7 @@ export const projects = [
     name: "Car Showcase",
     image: CarShowcase,
     number: 2,
+    github: "https://github.com/ewnsilva/car_showcase",
     technologies:
       "HTML, CSS, Javascript, Typescript, React, Next.js, Tailwind CSS, HeadlessUI.",
     description:
@@ -38,6 +40,7 @@ export const projects = [
     name: "WeatherApp",
     image: WeatherApp,
     number: 3,
+    github: "https://github.com/ewnsilva/weather-app",
     technologies:
       "HTML, CSS, Javascript, Typescript, React, Axios e Material UI",
     description:
@@ -47,6 +50,7 @@ export const projects = [
     name: "SeasonShop",
     image: SeasonShop,
     number: 4,
+    github: "https://github.com/ewnsilva/season_shop_react",
     technologies: "HTML, CSS, Javascript e React",
     description:
       "O projeto Season Shop trata-se se uma avaliação técnica para concorrer a uma vaga de estágio oferecida pela Season, onde consiste no desenvolvimento de uma loja com sistema de carrinho de compras, tendo como tecnologias uitlizadas HTML, CSS, Javascript e React.",
@@ -55,6 +59,7 @@ export const projects = [
     name: "ToDoList",
     image: ToDoList,
     number: 5,
+    github: "https://github.com/ewnsilva/todo_List",
     technologies: "HTML, CSS, Javascript e PHP",
     description:
       "O ToDoList trata-se de um projeto a qual foi proposto criar uma ferramenta de listagem de tarefas com layout responsiva, com intuito de por em pratica aprendizados sobre os conhecimentos iniciais sobre as tecnologias PHP e MySQL.",
@@ -63,6 +68,7 @@ export const projects = [
     name: "CryptoConverter",
     image: CryptoConverter,
     number: 6,
+    github: "https://github.com/ewnsilva/crypto_converter",
     technologies: "HTML, CSS e Javascript",
     description:
       "O projeto é um conversor de moeda de real (BRL) para bitcoin (BTC) pelo valor cotado em 2 de novembro de 2021, às 12h59. O desenvolvimento deste primeiro projeto tem como finalidade didática colocar em prática os conhecimentos adquiridos sobre lógica de programação e linguagem Javascript.",
