@@ -51,6 +51,11 @@
         "description": "📈 Proyecto futuro - Será una aplicación móvil enfocada en contenido de inversiones, con buenos materiales de estudio dirigidos a educación financiera."
       },
       {
+        "name": "14ndscapes",
+        "technologies": "React Native, Expo SDK, Expo Router, TypeScript, TanStack Query, AsyncStorage, i18next, expo-image, Jest, React Native Testing Library, ESLint, Prettier, Husky.",
+        "description": "Aplicación móvil de alto rendimiento diseñada para el descubrimiento curado de destinos turísticos y paisajes naturales icónicos. Cuenta con enrutamiento basado en archivos mediante Expo Router, arquitectura offline-first con persistencia de caché con TanStack Query y AsyncStorage, soporte multilingüe nativo (EN/PT/ES), renderizado optimizado de imágenes con expo-image y cobertura de pruebas unitarias automatizadas."
+      },
+      {
         "name": "Retro-Burgers",
         "technologies": "TypeScript, React, React Router, React Query, Material UI, i18next, Axios, Howler, Webpack, Vitest, Testing Library, Node.js, Express, SQLite, Sequelize.",
         "description": "Plataforma de E-commerce completa con temática Synthwave de los años 80. Presenta un flujo dinámico alimentado por API que incluye navegación por categorías, personalización avanzada de productos con adicionales, carrito de compras persistente y modal de resumen. Cuenta con soporte completo para internacionalización, cambio de temas visuales con bandas sonoras exclusivas a través de Howler.js, código fuertemente tipado y cobertura de pruebas unitarias."

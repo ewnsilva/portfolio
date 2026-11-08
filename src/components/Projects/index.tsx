@@ -23,7 +23,7 @@ export const Projects = (): JSX.Element => {
   const isDesktop = useMediaQuery(muiTheme.breakpoints.up("lg"));
   const isMobile = useMediaQuery(muiTheme.breakpoints.down("sm"));
 
-  const [preview, setPreview] = useState(1);
+  const [preview, setPreview] = useState(2);
   const [fadeIn, setFadeIn] = useState(true);
 
   const handlePrev = () => {
