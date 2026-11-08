@@ -18,10 +18,10 @@
     }
   },
   "about": {
-    "title": "Acerca de",
-    "paragraph1": "Soy <strong>Desarrollador Front-End</strong> con sólida experiencia en la creación de interfaces de alto rendimiento, escalables y enfocadas en la experiencia del usuario (UX/UI). Mi trayectoria incluye la concepción de diseños y el desarrollo de sistemas complejos.",
-    "paragraph2": "Actualmente, integro equipos enfocados en arquitecturas modernas de <strong>Micro Front-ends</strong>, utilizando <strong>JavaScript, TypeScript y React</strong>. Actúo fuertemente en la optimización de performance, refactorización de código legado y componentización avanzada con <strong>Material UI</strong>.",
-    "paragraph3": "Movido por el perfeccionamiento continuo, utilizo prácticas ágiles (Scrum) con herramientas como JIRA y Bitbucket para convertir reglas de negocio complejas en soluciones digitales fluidas, limpias y eficientes."
+    "title": "Sobre Mí",
+    "paragraph1": "Soy <strong>Desarrollador Web y Mobile</strong> con más de 4 años de experiencia creando interfaces escalables, sistemas de alto rendimiento y soluciones centradas en UX/UI. Mi trayectoria une la precisión del Front-End moderno con una sólida integración Back-End.",
+    "paragraph2": "Actualmente, me desempeño en <strong>Close-Up International</strong> trabajando con arquitecturas complejas de <strong>Micro Front-ends</strong> utilizando <strong>TypeScript, React, Node.js y Java</strong>. Me especializo en optimización de rendimiento, refactorización de código legado, pruebas automatizadas (Jest/Vitest) y diseño de componentes.",
+    "paragraph3": "Impulsado por la mejora continua, aplico metodologías ágiles (Scrum) y herramientas de IA para acelerar entregas, garantizando arquitecturas limpias, sostenibles y alineadas con estándares internacionales de ingeniería."
   },
   "contact": {
     "title": "Contacto",

@@ -18,10 +18,10 @@
     }
   },
   "about": {
-    "title": "Sobre",
-    "paragraph1": "Sou <strong>Desenvolvedor Front-End</strong> com sólida experiência na criação de interfaces de alto desempenho, escaláveis e focadas na experiência do usuário (UX/UI). Minha trajetória inclui a concepção de designs e o desenvolvimento de sistemas complexos.",
-    "paragraph2": "Atualmente, integro equipes focadas em arquiteturas modernas de <strong>Micro Front-ends</strong>, utilizando <strong>JavaScript, TypeScript e React</strong>. Atuo fortemente na otimização de performance, refatoração de código legado e componentização avançada com <strong>Material UI</strong>.",
-    "paragraph3": "Movido pelo aperfeiçoamento contínuo, utilizo práticas ágeis (Scrum) com ferramentas como JIRA e Bitbucket para converter regras de negócio complexas em soluções digitais fluidas, limpas e eficientes."
+    "title": "Sobre Mim",
+    "paragraph1": "Sou <strong>Desenvolvedor Web & Mobile</strong> com mais de 4 anos de experiência na criação de interfaces escaláveis, sistemas de alta performance e soluções focadas em UX/UI. Minha atuação combina a precisão do Front-End moderno à integração Back-End robusta.",
+    "paragraph2": "Atualmente, atuo no ecossistema da <strong>Close-Up International</strong> em arquiteturas complexas de <strong>Micro Front-ends</strong> com <strong>TypeScript, React, Node.js e Java</strong>. Sou especialista em otimização de performance, refatoração de código legado, testes automatizados (Jest/Vitest) e componentização avançada.",
+    "paragraph3": "Movido pela melhoria contínua e inovação, aplico metodologias ágeis (Scrum) e ferramentas de Inteligência Artificial para acelerar entregas, garantindo arquiteturas limpas, sustentáveis e alinhadas a padrões internacionais de engenharia."
   },
   "contact": {
     "title": "Contato",
